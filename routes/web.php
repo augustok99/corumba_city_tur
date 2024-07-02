@@ -11,6 +11,6 @@ Route::get('/detalhes', function () {
     return view('detalhes');
 })->name('detalhes');
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/home', function () { // como fica na url
+    return view('app'); //chamada do arquivo
 })->name('home'); // mome na ancora href html5
