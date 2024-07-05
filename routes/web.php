@@ -14,3 +14,7 @@ Route::get('/detalhes', function () {
 Route::get('/home', function () { // como fica na url
     return view('app'); //chamada do arquivo
 })->name('home'); // mome na ancora href html5
+
+Route::get('/detalhes', function () { // como fica na url
+    return view('layouts.detalhes'); //chamada do arquivo
+})->name('detalhes'); // mome na ancora href html5

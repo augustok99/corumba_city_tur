@@ -9,11 +9,11 @@
 <!-- cards -->
 <div class="flex justify-between ml-12">
     <!-- card 1 -->
-    <div class="mt-14 flex ml-40 w-[65rem] h-[65rem] z-0">
+    <div class="mt-14 flex ml-40 w-[65rem] h-[34rem] z-0">
         <div
             class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-xl w-[25rem] h-[24rem]">
             <div id="default-carousel" data-carousel="slide"
-                class="absolute ml-14 mt-12 overflow-hidden text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-xl h-[24rem] w-[24rem]">
+                class="absolute ml-14 mt-12 overflow-hidden text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-xl h-[24rem] w-[24rem]">
                 <!-- <img class="w-[24rem] h-full mt-1 absolute" src="{{ asset('images/modelo.png') }}" -->
                 <!-- alt="mulher apontando para o titulo" /> -->
 
@@ -80,9 +80,9 @@
     </div>
 
     <!-- card 2 -->
-    <div class="mt-14 flex ml-40 w-[65rem] h-[65rem] rounded-full">
+    <div class="mt-14 flex ml-40 w-[65rem] h-[34rem] rounded-full">
         <div
-            class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-full w-[28rem] h-[29rem]">
+            class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-full w-[28rem] h-[29rem]">
             <div
                 class="absolute -ml-16 -mt-3 overflow-hidden text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-full h-[30rem] w-[30rem]">
                 <img class="w-[24rem] h-full mt-1 ml-8 absolute" src="{{ asset('images/modelo.png') }}"
