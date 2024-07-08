@@ -51,3 +51,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
   carousel.init()
 });
+
+// smooth animation
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleciona todos os links de navegação com a classe 'nav_link'
+  const navLinks = document.querySelectorAll(".nav_link");
+
+  navLinks.forEach(function (navLink) {
+    navLink.addEventListener("click", function (event) {
+      event.preventDefault(); // Impede o comportamento padrão do link
+      console.log("Link clicked:", this);
+
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        console.log("Target element found:", targetElement);
+        // Calcula a altura da barra de navegação
+        const navHeight = document.querySelector("header").offsetHeight;
+
+        // Calcula a posição do início da seção considerando a altura da barra de navegação
+        let targetPosition =
+          targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        // Ajuste adicional para a seção de início para garantir que não haja espaço extra na rolagem suave
+        if (targetId === "#inicio") {
+          targetPosition -= 40; // ajuste de 40 pixels para garantir que o início seja corretamente exibido
+        }
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Seleciona o botão de menu e o menu
+  const btn = document.querySelector("button[aria-controls='mobile-menu']");
+  const menu = document.getElementById("mobile-menu");
+
+  // Adiciona um evento de clique ao botão de menu para alternar a visibilidade do menu
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+});
+
+

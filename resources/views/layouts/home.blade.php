@@ -11,7 +11,7 @@
     <!-- card 1 -->
     <div class="mt-14 flex ml-40 w-[65rem] h-[34rem] z-0">
         <div
-            class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-xl w-[25rem] h-[24rem]">
+            class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-2xl bg-clip-content rounded-xl w-[25rem] h-[24rem]">
             <div id="default-carousel" data-carousel="slide"
                 class="absolute ml-14 mt-12 overflow-hidden text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-xl h-[24rem] w-[24rem]">
                 <!-- <img class="w-[24rem] h-full mt-1 absolute" src="{{ asset('images/modelo.png') }}" -->

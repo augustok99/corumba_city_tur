@@ -18,3 +18,11 @@ Route::get('/home', function () { // como fica na url
 Route::get('/detalhes', function () { // como fica na url
     return view('layouts.detalhes'); //chamada do arquivo
 })->name('detalhes'); // mome na ancora href html5
+
+Route::get('/avaliacao', function () { // como fica na url
+    return view('layouts.avaliacao'); //chamada do arquivo
+})->name('avaliacao'); // mome na ancora href html5
+
+Route::get('/login', function () { // como fica na url
+    return view('layouts.login'); //chamada do arquivo
+})->name(''); // mome na ancora href html5

@@ -35,7 +35,7 @@
               alt="Your Company"> -->
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
+                    <div class="flex space-x-4 items-center justify-center">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home') }}"
                             class="font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold"
@@ -48,11 +48,12 @@
                             nós</a>
                         <a href="{{ route('detalhes') }}"
                             class="font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold ">Detalhes</a>
-                        <a href="#"
+                        <a href="{{ route('avaliacao') }}"
                             class="font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Avaliacão</a>
                     </div>
                 </div>
             </div>
+
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button type="button">
                     <img src=" {{ asset('images/notificacoes.png') }}" class="w-7 mr-2" alt="">
@@ -60,7 +61,7 @@
 
 
                 <!-- Profile dropdown -->
-                <div class="relative ml-3">
+                <div class="relative ml-3 flex items-center">
                     <div>
                         <button type="button" class="relative flex rounded-full text-sm focus:outline-none"
                             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -72,17 +73,30 @@
                         </button>
                     </div>
 
-                    <div id="user-menu"
-                        class=" hidden absolute right-0 z-10 mt-3 w-48 origin-top-right rounded-md bg-white py-1 shadow-xl focus:outline-none"
-                        role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                        <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                            id="user-menu-item-0">Your Profile</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                            id="user-menu-item-1">Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                            id="user-menu-item-2">Sign out</a>
+
+                    <div class="flex flex-col mt-9">
+                        <div id="user-menu"
+                            class=" hidden absolute mr-36 right-0 z-10 mt-3 items-center w-48 origin-top-right rounded-md bg-white py-1 shadow-xl focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-0">Your Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-1">Settings</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-2">Sign out</a>
+                        </div>
                     </div>
+
+
+                    <div class="">
+                        <a href="{{ route('avaliacao') }}"
+                            class="font-poppins font-medium rounded-md px-3 py-2 ml-4 hover:font-semibold">
+                            <button type="submit"
+                                class="font-poppins focus:outline-none focus:border-none font-medium bg-rose_light shadow-2xl hover:font-semibold hover:scale-110 rounded-xl w-[7rem] h-[3rem]">Cadastrar</button>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>

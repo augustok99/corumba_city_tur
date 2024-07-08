@@ -10,7 +10,7 @@
     @include('layouts.cabecalho')
 </header>
 
-<body class="bg-blue_light">
+<body class="bg-gradient-to-r from-blue_light to-rose_light from-10% to-90%">
     <div class=" mt-28 flex justify-center items-center">
         <h1 class="text-center font-montserrat text-[2.1rem] font-bold">Aonde você quer ir?</h1>
     </div>

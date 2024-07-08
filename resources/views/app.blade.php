@@ -5,7 +5,7 @@
     @include('config')
 </head>
 
-<body class="bg-blue_light">
+<body class="bg-gradient-to-r from-blue_light to-rose_light from-20% to-80%">
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
 
     <header class="flex justify-center">
