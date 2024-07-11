@@ -1,19 +1,49 @@
-// abrir e fechar menu perfil
 document.addEventListener('DOMContentLoaded', function () {
-  // Alternar menu móvel
-  document.querySelector('[aria-controls="mobile-menu"]').addEventListener('click', function () {
-    const mobileMenu = document.getElementById('mobile-menu');
+  // Elementos do DOM
+  const mobileMenu = document.getElementById('mobile-menu');
+  const userMenuButton = document.getElementById('user-menu-button');
+  const userMenu = document.getElementById('user-menu');
+  const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
+
+  // Função para alternar a visibilidade do menu móvel
+  function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
+  }
+
+  // Evento para alternar o menu móvel
+  menuButton.addEventListener('click', function (event) {
+    toggleMobileMenu();
+    event.stopPropagation(); // Previne que o clique no botão feche o menu imediatamente
   });
 
-  // Alternar menu do usuário
-  document.getElementById('user-menu-button').addEventListener('click', function () {
-    const userMenu = document.getElementById('user-menu');
+  // Evento para fechar o menu móvel ao clicar fora dele
+  document.addEventListener('click', function (event) {
+    if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  // Função para alternar a visibilidade do menu do usuário
+  function toggleUserMenu() {
     userMenu.classList.toggle('hidden');
+  }
+
+  // Evento para alternar o menu do usuário
+  userMenuButton.addEventListener('click', function (event) {
+    toggleUserMenu();
+    event.stopPropagation(); // Previne que o clique no botão feche o menu imediatamente
+  });
+
+  // Evento para fechar o menu do usuário ao clicar fora dele
+  document.addEventListener('click', function (event) {
+    if (!userMenu.contains(event.target) && event.target !== userMenuButton) {
+      userMenu.classList.add('hidden');
+    }
   });
 });
 
-// carrousel
+
+// carrousel functions
 import { Carousel } from 'flowbite';
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -85,15 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-  });
-
-  // Seleciona o botão de menu e o menu
-  const btn = document.querySelector("button[aria-controls='mobile-menu']");
-  const menu = document.getElementById("mobile-menu");
-
-  // Adiciona um evento de clique ao botão de menu para alternar a visibilidade do menu
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
   });
 });
 
