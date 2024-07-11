@@ -12,13 +12,13 @@
 
 <body class="bg-gradient-to-r from-blue_light to-rose_light from-10% to-90%">
     <div class=" mt-28 flex justify-center items-center">
-        <h1 class="text-center font-montserrat text-[2.1rem] font-bold">Aonde você quer ir?</h1>
+        <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Aonde você quer ir?</h1>
     </div>
 
     <!-- component search -->
     <div class='max-w-md mx-auto mt-2'>
         <div
-            class="relative flex items-center w-[32rem] h-12 rounded-lg focus-within:shadow-lg bg-rose_light overflow-hidden">
+            class="relative flex items-center mx-auto md:mx-0 w-[18rem] md:w-[32rem] h-12 rounded-lg focus-within:shadow-lg bg-rose_medium overflow-hidden">
             <button type="submit" class="grid place-items-center h-full w-12 text-gray-900">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -28,17 +28,17 @@
             </button>
 
             <input
-                class="placeholder-gray-500 placeholder:font-medium font-montserrat peer h-full w-full text-md outline-none text-gray-700 pr-2 bg-rose_light"
+                class="placeholder-gray-500 placeholder:font-medium font-montserrat peer h-full w-full text-md outline-none text-gray-700 pr-2 bg-rose_medium"
                 id="search" placeholder="Pesquise Lugares..." />
         </div>
     </div>
 
     <!-- Icones -->
 
-    <div class="flex items-center justify-center mt-3 ml-10">
+    <div class=" hidden md:flex items-center justify-center mt-3 mx-auto md:ml-10">
         <a href="#" class="hover:scale-110 duration-300 flex items-center justify-between">
             <img class="scale-75" src="{{asset('images/search_map.png')}}" alt="">
-            <h3 class="text-lg font-poppins font-medium">Mostrar Tudo</h3>
+            <h3 class="md:text-lg text-base font-poppins font-medium">Mostrar Tudo</h3>
         </a>
         <a href="#" class="hover:scale-110 duration-300 flex items-center justify-between ml-4">
             <img class="mr-1 scale-100" src="{{asset('images/cama.png')}}" alt="">
@@ -56,44 +56,45 @@
 
     <!-- Hoteis -->
 
-    <div class="flex justify-center mt-44 mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl">Hoteis</h1>
+    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
+        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[12rem] xl:ml-[22rem] 2xl:mr-[18rem]">
+            Hoteis
+        </h1>
     </div>
-    <hr class="mt-1 ml-[15rem] w-8/12 h-0.5 border-t-0 bg-gray-600/50" />
+    <hr
+        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-    <div class="flex justify-center items-center">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="mt-20 ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-    </div>
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
 
-    <!-- Hoteis -->
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-    <div class="flex justify-center items-center">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
+
         </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+        <div class="flex justify-center items-center mx-auto">
+
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Botao -->
 
@@ -108,44 +109,45 @@
 
     <!-- Restaurantes -->
 
-    <div class="flex justify-center mt-44 mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl">Restaurantes</h1>
+    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
+        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[22rem] xl:ml-[22rem] 2xl:mr-[18rem]">
+            Restaurantes
+        </h1>
     </div>
-    <hr class="mt-1 ml-[12.5rem] w-8/12 h-0.5 border-t-0 bg-gray-600/50" />
+    <hr
+        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-    <div class="flex justify-center items-center">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="mt-20 ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-    </div>
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
 
-    <!-- Restaurantes -->
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-    <div class="flex justify-center items-center">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
+
         </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+        <div class="flex justify-center items-center mx-auto">
+
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Botao -->
 
@@ -161,44 +163,45 @@
 
     <!-- Monumentos -->
 
-    <div class="flex justify-center mt-44 mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl">Monumentos</h1>
+    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
+        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[22rem] xl:ml-[22rem] 2xl:mr-[18rem]">
+            Monumentos
+        </h1>
     </div>
-    <hr class="mt-1 ml-[12.5rem] w-8/12 h-0.5 border-t-0 bg-gray-600/50" />
+    <hr
+        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-    <div class="flex justify-center items-center">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="mt-20 ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class="mt-20 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-    </div>
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
 
-    <!-- Monumentos -->
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-    <div class="flex justify-center items-center">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
+        </div>
+        <div class="flex justify-center items-center mx-auto">
 
-        <div
-            class="ml-56 mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+            </div>
+
         </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-        </div>
-        <div
-            class=" mr-28 bg-rose_medium shadow-2xl rounded-2xl w-[27rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+        <div class="flex justify-center items-center mx-auto">
+
+            <div
+                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Botao -->
 
@@ -210,11 +213,6 @@
         </form>
 
     </div>
-
-
-
-
-
 </body>
 
 </html>
