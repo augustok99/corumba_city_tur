@@ -118,4 +118,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// validacao ao usuario que imagem foi carregada
+document.addEventListener('DOMContentLoaded', function () {
+  const imageInput = document.getElementById('imageInput');
 
+
+  imageInput.addEventListener('change', function () {
+    if (imageInput.files && imageInput.files.length > 0) {
+      taskList.classList.remove('hidden');
+    }
+  });
+});

@@ -26,3 +26,7 @@ Route::get('/avaliacao', function () { // como fica na url
 Route::get('/login', function () { // como fica na url
     return view('layouts.login'); //chamada do arquivo
 })->name(''); // mome na ancora href html5
+
+Route::get('/lugares_cadastrados', function () { // como fica na url
+    return view('layouts.lugares_cadastrados'); //chamada do arquivo
+})->name('lugares_cadastrados'); // mome na ancora href html5

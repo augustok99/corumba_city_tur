@@ -46,8 +46,12 @@
                             class="sm:text-sm md:text-base font-poppin font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Sobre</a>
                         <a href="{{ route('detalhes') }}"
                             class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold ">Detalhes</a>
-                        <a href="{{ route('avaliacao') }}"
-                            class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Avaliacão</a>
+                        <div>
+                            <a href="{{ route('avaliacao') }}"
+                                class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Avaliacão</a>
+                        </div>
+                        <a href="{{ route('lugares_cadastrados') }}"
+                            class="text-base text-center hover:scale-105 shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] bg-rose_light hover:font-semibold">Cadastrar</a>
                     </div>
                 </div>
             </div>

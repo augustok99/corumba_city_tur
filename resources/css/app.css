@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .custom-file-input::file-selector-button {
+        @apply appearance-none rounded-xl ml-4 py-3 md:px-5 mr-7 w-[10rem] h-[3rem] flex flex-col md:w-[10rem] md:h-[3rem] text-center font-poppins font-light text-sm cursor-pointer;
+        background-color: theme('colors.rose_medium') !important;
+        color: theme('colors.black') !important;
+
+        &:hover {
+            background-color: theme('colors.rose_light') !important;
+        }
+    }
+
+    .custom-file-input {
+        @apply font-poppins text-sm mr-6 md:mr-0 md:ml-6 pr-2 rounded-xl w-[10rem] h-[3rem] flex flex-col;
+    }
+}
