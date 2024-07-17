@@ -82,41 +82,50 @@ document.addEventListener('DOMContentLoaded', function () {
   carousel.init()
 });
 
-// smooth animation
-document.addEventListener("DOMContentLoaded", function () {
-  // Seleciona todos os links de navegação com a classe 'nav_link'
-  const navLinks = document.querySelectorAll(".nav_link");
+//animação smooth
+// Seleciona todos os links de navegação com a classe 'nav_link'
+const navLinks = document.querySelectorAll(".nav_link");
 
-  navLinks.forEach(function (navLink) {
-    navLink.addEventListener("click", function (event) {
-      event.preventDefault(); // Impede o comportamento padrão do link
-      console.log("Link clicked:", this);
+navLinks.forEach(function (navLink) {
+  navLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
 
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
+    const targetId = this.getAttribute("id"); // Obtém o ID do alvo do link
+    const currentUrl = window.location.pathname;
 
-      if (targetElement) {
-        console.log("Target element found:", targetElement);
-        // Calcula a altura da barra de navegação
-        const navHeight = document.querySelector("header").offsetHeight;
+    // Verifica se o usuário está na rota /home ou /
+    if (currentUrl === '/home' || currentUrl === '/') {
+      // Verifica se o link clicado é para a mesma página e a animação é necessária
+      if (targetId === "#home" || targetId === "#historias" || targetId === "#sobre") {
+        const targetElement = document.querySelector(targetId);
 
-        // Calcula a posição do início da seção considerando a altura da barra de navegação
-        let targetPosition =
-          targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+        if (targetElement) {
+          // Calcula a altura da barra de navegação
+          const navHeight = document.querySelector("header").offsetHeight;
 
-        // Ajuste adicional para a seção de início para garantir que não haja espaço extra na rolagem suave
-        if (targetId === "#inicio") {
-          targetPosition -= 40; // ajuste de 40 pixels para garantir que o início seja corretamente exibido
+          // Calcula a posição do início da seção considerando a altura da barra de navegação
+          let targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+
+          // Ajuste adicional para a seção de início (home) para garantir que não haja espaço extra na rolagem suave
+          if (targetId === "#home") {
+            targetPosition -= 115; // ajuste de 115 pixels para garantir que o início seja corretamente exibido
+          }
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
         }
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
       }
-    });
+    } else {
+      // Redireciona para a página /home se o usuário estiver em outra rota
+      window.location.href = "/home";
+    }
   });
 });
+
+
+
 
 // validacao ao usuario que imagem foi carregada
 document.addEventListener('DOMContentLoaded', function () {
@@ -127,5 +136,46 @@ document.addEventListener('DOMContentLoaded', function () {
     if (imageInput.files && imageInput.files.length > 0) {
       taskList.classList.remove('hidden');
     }
+    if (!imageInput.files || imageInput.files.length == 0) {
+      taskList.classList.add('hidden');
+    }
+  });
+});
+
+//aplicar filtro na pagina de detalhes
+
+$(document).ready(function () {
+  $('.filter-link').click(function (e) {
+    e.preventDefault();
+    var filter = $(this).data('filter');
+
+    $('.flex-wrap > .flex').each(function () {
+      if (filter === 'all' || $(this).hasClass(filter)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+});
+
+//carregar mais items
+
+document.addEventListener('DOMContentLoaded', function () {
+  let visibleItems = 4;
+  const items = document.querySelectorAll('.place-item');
+  const loadMoreButton = document.getElementById('loadMoreButton');
+
+  loadMoreButton.addEventListener('click', function () {
+    visibleItems += 4;
+    items.forEach((item, index) => {
+      if (index < visibleItems) {
+        item.classList.remove('hidden');
+      }
+    });
+
+    // if (visibleItems >= items.length) {
+    //   loadMoreButton.classList.add('hidden');
+    // }
   });
 });

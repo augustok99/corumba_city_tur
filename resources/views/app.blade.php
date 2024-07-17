@@ -13,15 +13,15 @@
     </header>
 
     <main>
-        <section>
+        <section id="home">
             @include('layouts.home')
         </section>
 
-        <section>
+        <section id="historias">
             @include('layouts.historias')
         </section>
 
-        <section>
+        <section id="sobre">
             @include('layouts.sobre')
         </section>
     </main>

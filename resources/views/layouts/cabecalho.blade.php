@@ -37,13 +37,13 @@
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4 items-center justify-center">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="{{ route('home') }}"
-                            class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold"
+                        <a href="{{ route('home') }}" id="#home"
+                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold"
                             aria-current="page">Home</a>
-                        <a href="#"
-                            class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold">Histórias</a>
-                        <a href="#"
-                            class="sm:text-sm md:text-base font-poppin font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Sobre</a>
+                        <a href="{{ route('home') }}" id="#historias"
+                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold">Histórias</a>
+                        <a href="{{ route('home') }}" id="#sobre"
+                            class="nav_link sm:text-sm md:text-base font-poppin font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Sobre</a>
                         <a href="{{ route('detalhes') }}"
                             class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold ">Detalhes</a>
                         <div>
@@ -69,26 +69,37 @@
                             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">Open user menu</span>
+                            <!-- Se o usuário estiver autenticado (auth()->check()) e tiver uma imagem de perfil definida (auth()->user()->profile_image),
+                              o caminho para essa imagem é retornado.
+                              Caso contrário, se o usuário não estiver autenticado ou não tiver uma imagem de perfil definida, retorna o caminho para uma imagem padrão,default_profile.jpg.
+                              -->
                             <img class="h-8 w-8 rounded-full"
-                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt="">
+                                src="{{ auth()->check() && auth()->user()->profile_image ? asset('profiles/' . auth()->user()->profile_image) : asset('images/default_profile.jpg') }}"
+                                alt="Foto de perfil do usuário">
                         </button>
                     </div>
 
 
                     <div class="flex flex-col mt-9">
                         <div id="user-menu"
-                            class=" hidden absolute right-0 z-10 mt-3 items-center w-48 origin-top-right rounded-md bg-white py-1 shadow-xl focus:outline-none"
+                            class="hidden absolute right-0 z-10 mt-3 items-center w-48 origin-top-right rounded-md bg-white py-1 shadow-xl focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">Sign out</a>
+                            <!-- Exibe o nome de usuário ou "Seu Perfil" se estiver autenticado -->
+                            <span class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</span>
+
+                            <!-- Verifica se o usuário está autenticado para exibir o formulário de logout -->
+                            @auth
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-2">Sair da conta</button>
+                                </form>
+                            @endauth
                         </div>
                     </div>
+
+
 
                 </div>
             </div>

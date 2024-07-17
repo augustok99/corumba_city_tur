@@ -12,6 +12,7 @@ export default {
       blue_light: '#CDE7FF',
       rose_light: '#D9D9D9',
       rose_medium: '#DDD0D0',
+      rose_strong: '#D88A8A',
       gray_light: '#776767',
       white: '#FFFFFF',
       black: '#000000'

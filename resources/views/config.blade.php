@@ -10,6 +10,7 @@
     rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js">
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @vite('resources/css/app.css')
 @vite('resources/js/app.js')
 <title>app</title>

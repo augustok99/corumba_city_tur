@@ -3,7 +3,6 @@
 
 <head>
     @include("config")
-
 </head>
 
 <header class="flex justify-center w-full">
@@ -34,184 +33,73 @@
     </div>
 
     <!-- Icones -->
-
-    <div class=" hidden md:flex items-center justify-center mt-3 mx-auto md:ml-10">
-        <a href="#" class="hover:scale-110 duration-300 flex items-center justify-between">
-            <img class="scale-75" src="{{asset('images/search_map.png')}}" alt="">
+    <div class="hidden md:flex items-center justify-center mt-3 mx-auto md:ml-10">
+        <a href="#" class="filter-link hover:scale-110 duration-300 flex items-center justify-between"
+            data-filter="all">
+            <img class="scale-75" src="{{ asset('images/search_map.png') }}" alt="">
             <h3 class="md:text-lg text-base font-poppins font-medium">Mostrar Tudo</h3>
         </a>
-        <a href="#" class="hover:scale-110 duration-300 flex items-center justify-between ml-4">
-            <img class="mr-1 scale-100" src="{{asset('images/cama.png')}}" alt="">
+        <a href="#" class="filter-link hover:scale-110 duration-300 flex items-center justify-between ml-4"
+            data-filter="hotel">
+            <img class="mr-1 scale-100" src="{{ asset('images/cama.png') }}" alt="">
             <h3 class="text-lg font-poppins font-medium">Hotel</h3>
         </a>
-        <a href="#" class="hover:scale-110 duration-300 flex items-center justify-between ml-4">
-            <img class="mr-1 scale-100" src="{{asset('images/restaurante.png')}}" alt="">
+        <a href="#" class="filter-link hover:scale-110 duration-300 flex items-center justify-between ml-4"
+            data-filter="restaurante">
+            <img class="mr-1 scale-100" src="{{ asset('images/restaurante.png') }}" alt="">
             <h3 class="text-lg scale-100 font-poppins font-medium">Restaurante</h3>
         </a>
-        <a href="#" class=" hover:scale-110 duration-300 flex items-center justify-between ml-4">
-            <img class="mr-1 scale-90" src="{{asset('images/monumento.png')}}" alt="">
+        <a href="#" class="filter-link hover:scale-110 duration-300 flex items-center justify-between ml-4"
+            data-filter="monumento">
+            <img class="mr-1 scale-90" src="{{ asset('images/monumento.png') }}" alt="">
             <h3 class="text-lg font-poppins font-medium">Monumentos</h3>
         </a>
     </div>
 
-    <!-- Hoteis -->
-
-    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
+    <!-- Section for displaying places -->
+    <div class="item hotel flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
         <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[12rem] xl:ml-[22rem] 2xl:mr-[18rem]">
-            Hoteis
+            Locais
         </h1>
     </div>
     <hr
-        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
+        class="item hotel 2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
-        <div class="flex justify-center items-center mx-auto">
-
+    <div class="flex flex-wrap justify-center mx-auto mt-10">
+        @foreach ($places as $place)
+        <div class="flex justify-center items-center mx-auto p-4 item {{ strtolower($place->type) }}">
             <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
+                class="relative bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300">
+                @if ($place->image_path)
+                <img class="w-full h-full max-w-[18rem] max-h-[22rem] rounded-2xl absolute top-0 left-0 z-0"
+                    src="{{ asset('places_path/' . $place->image_path) }}" alt="Imagem do local">
+                @endif
+                <div class="absolute inset-0 flex flex-col justify-between p-4 rounded-2xl z-10">
+                    <div class="flex justify-start items-center pl-4 pt-2">
+                        <img class="h-8 w-8 rounded-full"
+                            src="{{ auth()->check() && $place->profile_image ? asset('profiles/' . $place->profile_image) : asset('images/default_profile.jpg') }}"
+                            alt="Foto de perfil do usuário">
+                        <span class="block font-poppins py-2 text-base text-white font-medium ml-4" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{ auth()->check() ? $place->username : 'Seu Perfil'
+                                        }}</span>
+                    </div>
+                    <div class="flex flex-col space-y-2 justify-center mt-4">
+                        <span class="block font-poppins px-4 text-base text-white font-medium" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
+                        <span class="block font-poppins px-4 text-base text-white font-medium" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{ 'Tipo de Local: ' . $place->type }}</span>
+                    </div>
+                </div>
             </div>
-
         </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
-            </div>
-
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
+        @endforeach
     </div>
-
-
-
 
     <!-- Botao -->
-
     <div class="flex justify-center">
-        <form action="">
-            <button type="submit"
-                class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
-                Mais</button>
-        </form>
-
-    </div>
-
-    <!-- Restaurantes -->
-
-    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[22rem] xl:ml-[22rem] 2xl:mr-[18rem]">
-            Restaurantes
-        </h1>
-    </div>
-    <hr
-        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
-
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
-            </div>
-
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
-            </div>
-
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Botao -->
-
-    <div class="flex justify-center">
-        <form action="">
-            <button type="submit"
-                class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
-                Mais</button>
-        </form>
-
-    </div>
-
-
-    <!-- Monumentos -->
-
-    <div class="flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[22rem] xl:ml-[22rem] 2xl:mr-[18rem]">
-            Monumentos
-        </h1>
-    </div>
-    <hr
-        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
-
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row">
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
-            </div>
-
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300 mx-auto">
-            </div>
-
-        </div>
-        <div class="flex justify-center items-center mx-auto">
-
-            <div
-                class="mt-20 bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-32 hover:scale-110 duration-300">
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Botao -->
-
-    <div class="flex justify-center">
-        <form action="">
-            <button type="submit"
-                class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
-                Mais</button>
-        </form>
-
+        <button id="loadMoreButton" type="button"
+            class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
+            Mais</button>
     </div>
 </body>
 
