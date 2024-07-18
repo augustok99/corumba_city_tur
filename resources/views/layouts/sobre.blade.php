@@ -7,7 +7,7 @@
 <div class=" mx-auto lg:mx-0 flex flex-col lg:flex-row justify-center mb-48 sm:mb-0">
 
     <div
-        class="w-[20rem] h-[25rem] max-h-[25rem] max-w-[25rem] lg:h-[25rem] lg:w-[21rem] mt-12 mx-auto lg:mx-0 lg:mr-0 bg-rose_medium shadow-2xl rounded-2xl mb-28 sm:mb-32 hover:scale-110 duration-300">
+        class="w-[20rem] h-[25rem] max-h-[25rem] max-w-[25rem] lg:h-[25rem] lg:w-[21rem] mt-12 mx-auto lg:mx-0 lg:mr-0 bg-red-300 shadow-2xl rounded-2xl mb-28 sm:mb-32 hover:scale-110 duration-300">
 
     </div>
     <div

@@ -14,7 +14,7 @@
     <div
         class="mt-14 w-[20rem] h-[20rem] flex sm:justify-normal mx-auto sm:mr-0 sm:ml-40 sm:w-[65rem] sm:h-[34rem] z-0">
         <div
-            class="w-[20rem] h-[20rem] absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-2xl bg-clip-content rounded-xl sm:w-[23rem] sm:h-[22rem] xl:w-[25rem] xl:h-[24rem] ">
+            class="w-[20rem] h-[20rem] absolute flex mt-14 flex-col text-gray-700 bg-red-300 shadow-2xl bg-clip-content rounded-xl sm:w-[23rem] sm:h-[22rem] xl:w-[25rem] xl:h-[24rem] ">
             <div id="default-carousel" data-carousel="slide"
                 class="w-[20rem] h-[20rem] absolute ml-14 mt-12 overflow-hidden text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-xl sm:h-[22rem] sm:w-[22rem] xl:h-[24rem] xl:w-[24rem]">
                 <!-- <img class="w-[24rem] h-full mt-1 absolute" src="{{ asset('images/modelo.png') }}" -->
@@ -85,12 +85,14 @@
 
     <!-- card 2 -->
     <div class="hidden mt-14 lg:flex sm:ml-40 sm:w-[65rem] sm:h-[34rem] rounded-full">
-        <div
-            class="absolute flex mt-14 flex-col text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-full w-[28rem] h-[29rem] lg:w-[26rem] lg:h-[26rem] xl:w-[28rem] xl:h-[29rem]">
+        <div class="flex xl:justify-between lg:justify-center items-center mt-14">
             <div
-                class="absolute -ml-16 -mt-3 overflow-hidden text-gray-700 bg-rose_medium shadow-xl bg-clip-border rounded-full h-[30rem] w-[30rem] lg:h-[27rem] lg:w-[27rem] xl:h-[30rem] xl:w-[30rem]">
-                <img class="w-[24rem] h-full mt-1 ml-8 absolute" src="{{ asset('images/modelo.png') }}"
-                    alt="mulher apontando para o titulo" />
+                class="absolute ml-8 lg:mb-16 lg:ml-96 xl:ml-0 overflow-hidden bg-red-300 shadow-xl bg-clip-border rounded-full h-[29rem] w-[28rem] lg:h-[28rem] lg:w-[28rem] xl:h-[30rem] xl:w-[30rem]">
+                <div class="flex justify-center">
+                    <img class="xl:w-[25rem] lg:w-[23rem] h-full mx-auto px-auto absolute"
+                        src="{{ asset('images/modelo.png') }}" alt="mulher jovem apontando para o titulo" />
+                </div>
+
             </div>
         </div>
     </div>
