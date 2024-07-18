@@ -162,20 +162,34 @@ $(document).ready(function () {
 //carregar mais items
 
 document.addEventListener('DOMContentLoaded', function () {
-  let visibleItems = 4;
-  const items = document.querySelectorAll('.place-item');
+  let visibleItems = 4; // Número inicial de itens visíveis
+  const items = document.querySelectorAll('#place-item');
   const loadMoreButton = document.getElementById('loadMoreButton');
 
-  loadMoreButton.addEventListener('click', function () {
-    visibleItems += 4;
+  // Função para atualizar a visibilidade dos itens e o estado do botão
+  function updateVisibleItems() {
     items.forEach((item, index) => {
       if (index < visibleItems) {
         item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
       }
     });
 
-    // if (visibleItems >= items.length) {
-    //   loadMoreButton.classList.add('hidden');
-    // }
+    // Exibir ou ocultar o botão de "Carregar Mais" com base na visibilidade dos itens
+    if (visibleItems >= items.length) {
+      loadMoreButton.classList.add('hidden'); // Oculta o botão se não houver mais itens para mostrar
+    } else {
+      loadMoreButton.classList.remove('hidden'); // Mostra o botão se houver mais itens para mostrar
+    }
+  }
+
+  // Atualiza a visibilidade dos itens iniciais ao carregar a página
+  updateVisibleItems();
+
+  // Evento de clique no botão "Carregar Mais"
+  loadMoreButton.addEventListener('click', function () {
+    visibleItems += 4; // Aumenta o número de itens visíveis ao clicar no botão
+    updateVisibleItems(); // Atualiza a visibilidade dos itens
   });
 });

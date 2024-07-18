@@ -10,7 +10,7 @@
     @include('layouts.cabecalho')
 </header>
 
-<body class="bg-gradient-to-r from-blue_light to-rose_light from-20% to-80%">
+<body class="bg-gradient-to-r from-red-200 via-rose_medium to-red-200 from-10% via-30% to-60%">
     <div class=" mt-28 flex justify-center items-center">
         <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Avaliação</h1>
     </div>

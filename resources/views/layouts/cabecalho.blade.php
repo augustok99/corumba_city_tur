@@ -1,4 +1,4 @@
-<nav class="fixed z-10 bg-clip-border bg-rose_medium w-full">
+<nav class="fixed z-10 bg-clip-border bg-red-200 w-full shadow-md">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -38,32 +38,33 @@
                     <div class="flex space-x-4 items-center justify-center">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home') }}" id="#home"
-                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold"
+                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-red-100 hover:font-semibold"
                             aria-current="page">Home</a>
                         <a href="{{ route('home') }}" id="#historias"
-                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light hover:font-semibold">Histórias</a>
+                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-red-100 hover:font-semibold">Histórias</a>
                         <a href="{{ route('home') }}" id="#sobre"
-                            class="nav_link sm:text-sm md:text-base font-poppin font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Sobre</a>
+                            class="nav_link sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-red-100  hover:font-semibold">Sobre</a>
                         <a href="{{ route('detalhes') }}"
-                            class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold ">Detalhes</a>
+                            class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-red-100  hover:font-semibold ">Detalhes</a>
                         <div>
                             <a href="{{ route('avaliacao') }}"
-                                class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-rose_light  hover:font-semibold">Avaliacão</a>
+                                class="sm:text-sm md:text-base font-poppins font-medium rounded-md px-3 py-2 hover:bg-red-100  hover:font-semibold">Avaliacão</a>
                         </div>
                         <a href="{{ route('lugares_cadastrados') }}"
-                            class="text-base text-center hover:scale-105 shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] bg-rose_light hover:font-semibold">Cadastrar</a>
+                            class="text-base text-center hover:scale-105 text-black shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] hover:font-medium bg-rose_medium">Cadastrar</a>
                     </div>
                 </div>
             </div>
 
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div
+                class="absolute flex sm:hidden md:flex items-center lg:flex inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button type="button">
                     <img src=" {{ asset('images/notificacoes.png') }}" class="w-7 mr-2" alt="">
                 </button>
 
 
                 <!-- Profile dropdown -->
-                <div class="relative ml-3 flex items-center">
+                <div class="flex item-center relative ml-3 md:flex items-center">
                     <div>
                         <button type="button" class="relative flex rounded-full text-sm focus:outline-none"
                             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -85,15 +86,16 @@
                             class="hidden absolute right-0 z-10 mt-3 items-center w-48 origin-top-right rounded-md bg-white py-1 shadow-xl focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Exibe o nome de usuário ou "Seu Perfil" se estiver autenticado -->
-                            <span class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                            <span class="block font-poppins px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                tabindex="-1"
                                 id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</span>
 
                             <!-- Verifica se o usuário está autenticado para exibir o formulário de logout -->
                             @auth
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                        tabindex="-1" id="user-menu-item-2">Sair da conta</button>
+                                    <button type="submit" class="font-poppins block px-4 py-2 text-sm text-gray-700"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-2">Sair da conta</button>
                                 </form>
                             @endauth
                         </div>
@@ -111,13 +113,13 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="#"
-                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-rose_light hover:text-black">Home</a>
+                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Home</a>
             <a href="#"
-                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-rose_light hover:text-black">Historias</a>
+                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Historias</a>
             <a href="#"
-                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-rose_light hover:text-black">Sobre</a>
+                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Sobre</a>
             <a href="#"
-                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-rose_light hover:text-black">Detalhes</a>
+                class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Detalhes</a>
         </div>
     </div>
 </nav>
