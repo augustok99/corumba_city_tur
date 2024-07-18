@@ -12,7 +12,7 @@
 <div class="flex justify-center sm:justify-between mr-16">
     <!-- card 1 -->
     <div
-        class="mt-14 w-[20rem] h-[20rem] flex sm:justify-normal mx-auto sm:mr-0 sm:ml-40 sm:w-[65rem] sm:h-[34rem] z-0">
+        class="2xl:mt-14 md:mt-2 w-[20rem] h-[20rem] flex sm:justify-normal mx-auto sm:mr-0 sm:ml-40 sm:w-[65rem] sm:h-[34rem] z-0">
         <div
             class="w-[20rem] h-[20rem] absolute flex mt-14 flex-col text-gray-700 bg-red-300 shadow-2xl bg-clip-content rounded-xl sm:w-[23rem] sm:h-[22rem] xl:w-[25rem] xl:h-[24rem] ">
             <div id="default-carousel" data-carousel="slide"
@@ -29,14 +29,13 @@
                     <div id="carousel-item-1"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="https://blog.ebaconline.com.br/blog/wp-content/uploads/2023/11/image6-1.png"
-                            class="absolute block w-full h-full" alt="...">
+                        <img src="{{asset('images/local-1.jpg')}}" class="absolute block w-full h-full" alt="...">
                     </div>
                     <!-- Item 2 -->
                     <div id="carousel-item-2"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="https://services.meteored.com/img/article/inteligencia-artificial-aprende-a-reconstruir-imagens-vistas-por-pessoas-ciencia-fotos-1679175318563_1280.jpg"
+                        <img src="{{asset('images/local-2.jpeg')}}"
                             class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
@@ -44,7 +43,7 @@
                     <div id="carousel-item-3"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="https://img.freepik.com/fotos-gratis/respingo-colorido-abstrato-3d-background-generativo-ai-background_60438-2509.jpg"
+                        <img src="{{asset('images/local-3.jpg')}}"
                             class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
@@ -52,7 +51,7 @@
                     <div id="carousel-item-4"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="https://png.pngtree.com/thumb_back/fw800/background/20230611/pngtree-wolf-animals-images-wallpaper-for-pc-384x480-image_2916211.jpg"
+                        <img src="{{asset('images/local-4.jpg')}}"
                             class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
@@ -60,7 +59,7 @@
                     <div id="carousel-item-5"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="https://pareto.io/wp-content/uploads/2024/05/gerador-imagens-ia-header-tess-astronaut-1.jpg"
+                        <img src="{{asset('images/local-5.jpg')}}"
                             class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
@@ -84,7 +83,7 @@
     </div>
 
     <!-- card 2 -->
-    <div class="hidden mt-14 lg:flex sm:ml-40 sm:w-[65rem] sm:h-[34rem] rounded-full">
+    <div class="hidden 2xl:mt-14 md:mt-2 lg:flex sm:ml-40 sm:w-[65rem] sm:h-[34rem] rounded-full">
         <div class="flex xl:justify-between lg:justify-center items-center mt-14">
             <div
                 class="absolute ml-8 lg:mb-16 lg:ml-96 xl:ml-0 overflow-hidden bg-red-300 shadow-xl bg-clip-border rounded-full h-[29rem] w-[28rem] lg:h-[28rem] lg:w-[28rem] xl:h-[30rem] xl:w-[30rem]">
