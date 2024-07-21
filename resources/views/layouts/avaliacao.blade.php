@@ -3,84 +3,67 @@
 
 <head>
     @include("config")
-
 </head>
 
 <header class="flex justify-center w-full">
     @include('layouts.cabecalho')
 </header>
 
-<body class="bg-gradient-to-r from-red-200 via-rose_medium to-red-200 from-10% via-30% to-60%">
-    <div class=" mt-28 flex justify-center items-center">
+<body class="bg-gradient-to-r from-gray-200 via-rose_light to-gray-50 from-10% via-10% to-80%">
+    <div class="mt-28 flex justify-center items-center">
         <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Avaliação</h1>
     </div>
 
     <!-- Avaliação -->
-    <div class="flex justify-center">
+    <div id="ratingsContainer" class="flex flex-col justify-center">
 
-        <div
-            class="flex flex-col mt-16 shadow-2xl xl:w-[55rem] w-[23rem] h-[26rem] md:w-[46rem] bg-white rounded-2xl mx-auto">
+        @foreach($ratings as $rating)
+        <div id="rating-item" data-rating-id="{{ $rating->id }}"
+            class="flex flex-col mt-16 shadow-2xl break-after-all xl:w-[55rem] w-[22rem] h-full md:w-[46rem] bg-white rounded-2xl mx-auto">
             <div class="flex justify-start items-center">
-
-                <div class="mt-6 ml-4 w-[2.5rem] h-[2.5rem] bg-gray-400 rounded-full">
-                    <!-- imagem -->
+                <div class="mt-7 ml-7 w-[2.5rem] h-[2.5rem] rounded-full overflow-hidden">
+                    <img src="{{ $rating && $rating->profile_image ? asset('profiles/' . $rating->profile_image) : asset('images/default_profile.jpg') }}"
+                        alt="Profile Image">
                 </div>
-
-                <h3 class="font-poppins mt-6 ml-2"> Username</h3>
+                <h3 class="font-poppins mt-6 ml-2">{{ $rating->username }}</h3>
             </div>
-
-            <div class="mt-5 ml-16 xl:w-[49rem] md:w-[40rem] h-full mb-6 ">
-                <h3 class="font-poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta expedita, hic
-                    tempore totam eveniet
-                    ex alias doloribus vel veritatis debitis reiciendis culpa molestias et voluptates voluptas
-                    consequuntur unde. Autem perferendis suscipit facilis? Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Fuga unde exercitationem pariatur?</h3>
+            <div class="mt-5 sm:ml-12 ml-6 xl:w-[49rem] md:w-[40rem] h-full mb-6 ">
+                <h3 class="font-poppins px-3 text-justify w-[19rem] break-words md:text-justify md:w-full">
+                    {{ $rating->content }}
+                </h3>
             </div>
-
-            <hr class="hidden md:flex mt-1 mb-3 ml-12 w-11/12 h-0.5 border-t-0 bg-gray-600/50" />
-
-            <div class="mb-8 ml-12">
-                <img class="w-9 hover:scale-110" src="{{asset('images/heart.png')}}" alt="">
+            <div class="flex flex-col mb-16 ml-12">
+                @include('partials.like_button')
             </div>
         </div>
+        @endforeach
+
     </div>
 
-    <!-- Botao -->
-
-    <div class="flex justify-center mt-7">
-        <form action="">
-            <button type="submit"
-                class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
-                Mais</button>
-        </form>
+    <div class="flex justify-center">
+        <button id="loadMoreButtonRating" type="button"
+            class="text-base text-center hover:scale-105 mt-8 text-black font-poppins px-3 py-2 bg-rose_medium shadow-lg rounded-xl w-[7rem] h-[3rem] md:w-[8rem] md:h-[3.2rem] font-medium duration-300">Ver
+            Mais</button>
     </div>
 
-    <div class="flex justify-center items-center">
-        <h1 class="text-2xl md:pl-5 font-extrabold font-poppins mx-auto">Comentar Avaliacao</h1>
+    <div class="flex justify-center items-center mt-28">
+        <h1 class="text-2xl md:pl-5 font-semibold font-poppins mx-auto">Comentar Avaliacao</h1>
     </div>
 
-    <div class="flex justify-center mt-6 mb-6">
-        <div class="mr-2 justify-center hidden md:flex">
-            <h3 class="ml-2 font-medium font-poppins">Mensagem:</h3>
-        </div>
-
+    <div class="flex justify-center items-center mt-6 mb-6">
         <div class="bg-rose_medium md:w-[43rem] md:h-[12rem] rounded-xl shadow-2xl w-[18rem] h-[22rem]">
-            <form action="" method="post">
-
-                <textarea name="" id=""
-                    class="text-base font-poppins placeholder-gray-500 focus:ring-0 w-full h-[12rem] pl-5 pt-4 pr-4 border-none placeholder:font-medium placeholder:font-poppins bg-transparent rounded-xl resize-none outline-none focus:outline-none"
+            <form action="{{ route('ratings.store') }}" method="POST">
+                @csrf
+                <textarea name="content" id="content"
+                    class="text-base mb-7 md:mb-0 font-poppins placeholder-gray-500 focus:ring-0 w-full h-[12rem] pl-5 pt-4 pr-4 border-none placeholder:font-medium placeholder:font-poppins bg-transparent rounded-xl resize-none outline-none focus:outline-none"
                     placeholder="Digite aqui..."></textarea>
-
-                <!-- Botao -->
-
                 <div class="flex justify-center mt-44 md:mt-12">
-                    <form action="">
-                        <button type="submit"
-                            class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Enviar</button>
-                    </form>
+                    <button type="submit"
+                        class="text-base text-center hover:scale-105 text-black font-poppins px-3 py-2 bg-rose_medium shadow-lg rounded-xl w-[7rem] h-[3rem] md:w-[8rem] md:h-[3.2rem] font-medium mb-32 duration-300">Enviar</button>
                 </div>
             </form>
         </div>
-
-
+    </div>
 </body>
+
+</html>

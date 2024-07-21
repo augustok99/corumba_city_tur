@@ -9,7 +9,7 @@
     @include('layouts.cabecalho')
 </header>
 
-<body class="bg-gradient-to-r from-red-200 via-rose_medium to-red-200 from-10% via-30% to-60%">
+<body class="bg-gradient-to-r from-gray-200 via-rose_light to-gray-50 from-10% via-10% to-80%">
     <div class=" mt-28 flex justify-center items-center">
         <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Aonde você quer ir?</h1>
     </div>
@@ -57,31 +57,33 @@
     </div>
 
     <!-- Section for displaying places -->
-    <div class="item hotel flex justify-center mx-auto mt-32 md:mt-44 md:mr-[81rem]">
-        <h1 class="font-poppins font-medium text-2xl ml-16 mr-auto md:mx-0 md:ml-[12rem] xl:ml-[22rem] 2xl:mr-[18rem]">
-            Locais
+    <div class="flex justify-center items-center mx-auto mt-32 md:mt-44">
+        <h1 class="font-montserrat flex font-semibold text-2xl">
+            Empresas que confiam em nós
         </h1>
     </div>
     <hr
-        class="item hotel 2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
+        class="2xl:ml-28 mt-1 md:mr-[12rem] mx-auto w-10/12 md:w-auto xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-    <div class="flex flex-wrap justify-center mx-auto mt-10">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid lg:grid-cols-4 gap-4 justify-center mx-auto mt-10">
         @foreach ($places as $place)
-            <div class="flex justify-center items-center mx-auto p-4 item {{ strtolower($place->type) }}">
+            <div class="mx-auto p-4 item {{ strtolower($place->type) }}">
                 <div class="relative bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300"
                     id="place-item">
                     @if ($place->image_path)
                         <img class="w-full h-full max-w-[18rem] max-h-[22rem] rounded-2xl absolute top-0 left-0 z-0"
                             src="{{ asset('places_path/' . $place->image_path) }}" alt="Imagem do local">
                     @endif
-                    <div class="absolute inset-0 flex flex-col justify-between p-4 rounded-2xl z-10">
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 rounded-2xl">
                         <div class="flex justify-start items-center pl-4 pt-2">
                             <img class="h-8 w-8 rounded-full"
-                                src="{{ auth()->check() && $place->profile_image ? asset('profiles/' . $place->profile_image) : asset('images/default_profile.jpg') }}"
+                                src="{{ $place && $place->profile_image ? asset('profiles/' . $place->profile_image) : asset('images/default_profile.jpg') }}"
                                 alt="Foto de perfil do usuário">
                             <span class="block font-poppins py-2 text-base text-white font-medium ml-4" role="menuitem"
-                                tabindex="-1" id="user-menu-item-0">{{ auth()->check() ? $place->username : 'Seu Perfil'
-                                                                }}</span>
+                                tabindex="-1"
+                                id="user-menu-item-0">{{ $place ? $place->username : 'Seu Perfil'
+                                                                                                                                                                                                }}</span>
                         </div>
                         <div class="flex flex-col space-y-2 justify-center mt-4">
                             <span class="block font-poppins px-4 text-base text-white font-medium" role="menuitem"
@@ -98,7 +100,7 @@
     <!-- Botao -->
     <div class="flex justify-center">
         <button id="loadMoreButton" type="button"
-            class="font-poppins font-medium mt-4 ml-5 bg-rose_medium shadow-2xl rounded-xl w-[8rem] h-[4rem] mb-32 hover:scale-110 duration-300">Ver
+            class="text-base text-center text-black px-3 py-2 shadow-lg rounded-xl w-[7rem] h-[3rem] md:w-[8rem] md:h-[3.2rem] font-medium duration-300 font-poppins mt-4 ml-5 bg-rose_medium mb-32 hover:scale-110">Ver
             Mais</button>
     </div>
 </body>

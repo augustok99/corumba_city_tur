@@ -29,13 +29,13 @@
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
                     <input type="checkbox" id="remember"
-                        class="h-4 w-4 rounded border-gray-300 text-rose_strong focus:ring-rose_medium focus:outline-none"
+                        class="h-4 w-4 rounded border-rose_medium text-rose_strong focus:ring-rose_medium focus:outline-none"
                         checked>
                     <label for="remember" class="ml-2 block text-sm text-gray-700">Guardar login</label>
                 </div>
 
                 <div class="flex flex-col">
-                    <a href="#"
+                    <a href="{{route("home")}}"
                         class="text-xs mb-2 text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Entrar
                         sem fazer login</a>
                     <a href="{{route("cadastro")}}"

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PictureController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\RatingController;
 
 // Redireciona para /login se não estiver autenticado, caso contrário, redireciona para /home
 Route::get('/', function () {
@@ -16,11 +17,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () { // como fica na url
     return view('app'); //chamada do arquivo
-})->name('home')->middleware('auth'); // mome na ancora href html5 //proteger a rota
-
-Route::get('/avaliacao', function () { // como fica na url
-    return view('layouts.avaliacao'); //chamada do arquivo
-})->name('avaliacao')->middleware('auth'); // mome na ancora href html5
+})->name('home'); // mome na ancora href html5 //proteger a rota
 
 Route::get('/login', function () { // como fica na url
     return view('layouts.login'); //chamada do arquivo
@@ -39,5 +36,9 @@ Route::post('/places', [PlaceController::class, 'store'])->name('places.store')-
 // Rotas de lugares
 Route::get('/lugares_cadastrados', [PlaceController::class, 'index'])->name('lugares_cadastrados')->middleware('auth');
 Route::get('/places', [PlaceController::class, 'index'])->name('places.index')->middleware('auth');
-Route::get('/detalhes', [PlaceController::class, 'showDetails'])->name('detalhes')->middleware('auth');
-Route::get('/places/create', [PlaceController::class, 'create'])->name('places.create')->middleware('auth');
+Route::get('/detalhes', [PlaceController::class, 'showDetails'])->name('detalhes');
+
+// Rotas de Avaliacao
+Route::post('/ratings/{id}/like', [RatingController::class, 'toggleLike'])->name('ratings.like')->middleware('auth');
+Route::get('/ratings/', [RatingController::class, 'show'])->name('ratings.show')->middleware('auth');
+Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store')->middleware('auth');

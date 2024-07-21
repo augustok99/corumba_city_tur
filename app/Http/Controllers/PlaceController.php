@@ -17,11 +17,6 @@ class PlaceController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        return view('places.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -54,8 +49,6 @@ class PlaceController extends Controller
             ->select('places.*', 'users.username as username', 'users.profile_image as profile_image')
             ->get();
 
-        return view('layouts.detalhes', compact('places'));
+        return view('layouts.detalhes', compact('places')); //passa a places para a view
     }
-
-
 }

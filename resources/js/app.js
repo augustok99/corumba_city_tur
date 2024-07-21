@@ -110,6 +110,9 @@ navLinks.forEach(function (navLink) {
           if (targetId === "#home") {
             targetPosition -= 115; // ajuste de 115 pixels para garantir que o início seja corretamente exibido
           }
+          if (targetId === "#sobre") {
+            targetPosition -= 100; // ajuste de 115 pixels para garantir que o início seja corretamente exibido
+          }
 
           window.scrollTo({
             top: targetPosition,
@@ -142,29 +145,30 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//aplicar filtro na pagina de detalhes
-
-$(document).ready(function () {
-  $('.filter-link').click(function (e) {
-    e.preventDefault();
-    var filter = $(this).data('filter');
-
-    $('.flex-wrap > .flex').each(function () {
-      if (filter === 'all' || $(this).hasClass(filter)) {
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
-    });
-  });
-});
-
-//carregar mais items
 
 document.addEventListener('DOMContentLoaded', function () {
   let visibleItems = 4; // Número inicial de itens visíveis
   const items = document.querySelectorAll('#place-item');
   const loadMoreButton = document.getElementById('loadMoreButton');
+
+
+  //aplicar filtro na pagina de detalhes
+  $(document).ready(function () {
+    $('.filter-link').click(function (e) {
+      e.preventDefault();
+      let filter = $(this).data('filter');
+
+      $('.item').each(function () {
+        if (filter === 'all' || $(this).hasClass(filter)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
+
+  //carregar mais items
 
   // Função para atualizar a visibilidade dos itens e o estado do botão
   function updateVisibleItems() {
@@ -193,3 +197,112 @@ document.addEventListener('DOMContentLoaded', function () {
     updateVisibleItems(); // Atualiza a visibilidade dos itens
   });
 });
+
+
+
+//executa o slideandFade quando o usuario observar a seção de historias
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll('#animatedElement');
+
+  // function isElementInViewport(el) {
+  //   const rect = el.getBoundingClientRect();
+  //   return (
+  //     rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+  //     rect.bottom >= 0
+  //   );
+  // }
+
+  function checkAnimation() {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    animatedElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+
+      // Define uma posição específica na página (por exemplo, metade da altura da viewport)
+      const thresholdPosition = viewportHeight
+
+      if (elementTop < thresholdPosition) {
+        element.classList.add('animate-slideInAndFade');
+        element.classList.remove('opacity-0');
+      } else {
+        element.classList.remove('animate-slideInAndFade');
+        element.classList.add('opacity-0');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkAnimation);
+  checkAnimation(); // Check on page load
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.like-button').forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.preventDefault(); // Previne o envio padrão do formulário
+
+      const form = this.closest('form'); // Encontra o formulário mais próximo
+      const formData = new FormData(form); // Cria um FormData a partir do formulário
+      const ratingId = this.getAttribute('data-rating-id'); // Obtém o ID do rating
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+      })
+        .then(response => response.json()) // Converte a resposta em JSON
+        .then(data => {
+          console.log("Dados recebidos:", data); // Verifica os dados recebidos
+
+          // Atualiza a imagem com base no estado retornado
+          const heartImage = document.querySelector(`#heart-image-${ratingId}`);
+
+          if (heartImage) {
+            heartImage.src = data.liked ? "/images/heart_red.png" : "/images/heart.png";
+          }
+        })
+        .catch(error => console.error('Erro:', error)); // Captura e exibe erros
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Função para carregar mais itens de avaliação
+  let visibleItemsRating = 3; // Número inicial de itens visíveis
+  const items_rating = document.querySelectorAll('#rating-item');
+  const loadMoreButtonRating = document.getElementById('loadMoreButtonRating');
+
+  // Função para atualizar a visibilidade dos itens e o estado do botão
+  function updateVisibleItemsRating() {
+    items_rating.forEach((item, index) => {
+      if (index < visibleItemsRating) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    // Exibir ou ocultar o botão de "Carregar Mais" com base na visibilidade dos itens
+    if (visibleItemsRating >= items_rating.length) {
+      loadMoreButtonRating.classList.add('hidden'); // Oculta o botão se não houver mais itens para mostrar
+    } else {
+      loadMoreButtonRating.classList.remove('hidden'); // Exibe o botão se houver mais itens
+    }
+  }
+
+  // Atualiza a visibilidade dos itens iniciais ao carregar a página
+  updateVisibleItemsRating();
+
+  // Evento de clique no botão "Carregar Mais"
+  loadMoreButtonRating.addEventListener('click', function () {
+    visibleItemsRating += 3; // Aumenta o número de itens visíveis ao clicar no botão
+    updateVisibleItemsRating(); // Atualiza a visibilidade dos itens
+  });
+});
+
+
+
