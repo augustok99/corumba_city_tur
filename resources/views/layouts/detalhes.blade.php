@@ -18,7 +18,7 @@
     <div class="max-w-md mx-auto mt-2">
         <form action="{{ route('places.search') }}" method="GET">
             <div
-                class="relative flex items-center mx-auto md:mx-0 w-[18rem] md:w-[32rem] h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                class="relative flex ring-2 ring-rose_strong items-center mx-auto md:mx-0 w-[18rem] md:w-[32rem] h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
                 <button type="submit" class="grid place-items-center h-full w-12 text-gray-900">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">

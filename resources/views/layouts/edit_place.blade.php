@@ -14,9 +14,9 @@
         <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Editar Lugar</h1>
     </div>
 
-    <div class="mt-12 flex justify-center">
+    <div class="mt-10 flex justify-center">
         <div
-            class="mt-16 bg-white w-[22rem] h-[18rem] md:w-[35rem] flex justify-center md:h-[31rem] rounded-lg shadow-lg">
+            class="ring-2 ring-rose_strong bg-white w-[22rem] h-[18rem] md:w-[35rem] flex justify-center md:h-[31rem] rounded-lg shadow-lg">
 
             <form action="{{ route('places.update', $place->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -26,7 +26,7 @@
                         <h3 class="text-center font-montserrat text-base md:text-base font-semibold mx-auto">*Titulo
                         </h3>
                         <input
-                            class="text-base border ring-2 ring-rose_medium border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
+                            class="text-base border ring-2 ring-rose_strong border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
                             name="title" placeholder="Digite aqui..." value="{{ $place->title }}" required>
                     </div>
 
@@ -70,7 +70,7 @@
                     <span class="text-left font-montserrat md:text-base font-semibold mb-3">Descrição do
                         Local</span>
                     <textarea
-                        class="pl-3 pt-2 text-sm border resize-none ring-2 mb-12 ring-rose_medium border-gray-300 rounded-lg w-[12rem] h-[2rem] md:w-[25rem] md:h-[7rem] font-poppins placeholder-gray-500 border-none outline-none"
+                        class="pl-3 pt-2 text-sm border resize-none ring-2 mb-12 ring-rose_strong border-gray-300 rounded-lg w-[12rem] h-[2rem] md:w-[25rem] md:h-[7rem] font-poppins placeholder-gray-500 border-none outline-none"
                         name="description"></textarea>
                 </div>
 
@@ -83,18 +83,18 @@
     </div>
 
     @if ($errors->any())
-    <div class="flex justify-center">
-        <div class="bg-red-100 items-center flex justify-center w-[22rem] mt-24 border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
-            role="alert">
-            <strong class="font-bold">Erro!</strong>
-            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="flex justify-center">
+            <div class="bg-red-100 items-center flex justify-center w-[22rem] mt-24 border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+                role="alert">
+                <strong class="font-bold">Erro!</strong>
+                <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
-    </div>
     @endif
 
 </body>

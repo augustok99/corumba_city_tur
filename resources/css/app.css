@@ -4,7 +4,7 @@
 
 @layer components {
     .custom-file-input::file-selector-button {
-        @apply appearance-none rounded-xl text-sm sm:text-[0.9rem] hover:bg-rose_light sm:ml-0 pr-1 sm:pr-1 outline-none ring-0 border-none py-3 md:px-5 sm:mr-7 w-[10rem] h-[3rem] flex flex-col md:w-[10rem] md:h-[3rem] text-center font-poppins font-medium cursor-pointer;
+        @apply appearance-none rounded-xl hover:rounded-xl text-sm sm:text-[0.9rem] hover:bg-rose_light sm:ml-0 pr-1 sm:pr-1 outline-none ring-0 border-none py-3 md:px-5 sm:mr-7 w-[10rem] h-[3rem] flex flex-col md:w-[10rem] md:h-[3rem] text-center font-poppins font-medium cursor-pointer;
         background-color: theme('colors.rose_medium') !important;
         color: theme('colors.black') !important;
         hover: theme('colors.rose_light') !important;
@@ -15,6 +15,7 @@
     }
 
     .custom-file-input::file-selector-button:hover {
+        @apply rounded-xl;
         background-color: theme('colors.rose_light') !important;
         /* Cor ao passar o mouse */
     }
