@@ -14,14 +14,14 @@
                 <div class="mb-4">
                     <label for="username_register" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
                     <input type="text" name="username" id="username_register"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none ring-1 focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Username" required>
                 </div>
                 <div class="mb-4">
                     <label for="password_register" class="block text-sm font-medium text-gray-700 mb-2">Sua
                         senha</label>
                     <input type="password" name="password" id="password_register"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none ring-1 focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Entre com sua senha" required>
                 </div>
                 <div class="mb-12 flex justify-center items-start flex-col">
