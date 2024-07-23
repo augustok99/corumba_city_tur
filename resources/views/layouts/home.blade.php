@@ -17,8 +17,6 @@
             class="w-[20rem] h-[20rem] absolute flex mt-14 flex-col text-gray-700 bg-red-200 shadow-2xl bg-clip-content rounded-xl sm:w-[23rem] sm:h-[22rem] xl:w-[25rem] xl:h-[24rem] ">
             <div id="default-carousel" data-carousel="slide"
                 class="w-[20rem] h-[20rem] absolute ml-14 mt-12 overflow-hidden text-gray-700 bg-rose_medium shadow-2xl bg-clip-border rounded-xl sm:h-[22rem] sm:w-[22rem] xl:h-[24rem] xl:w-[24rem]">
-                <!-- <img class="w-[24rem] h-full mt-1 absolute" src="{{ asset('images/modelo.png') }}" -->
-                <!-- alt="mulher apontando para o titulo" /> -->
 
                 <!-- caroucel -->
 
@@ -29,14 +27,15 @@
                     <div id="carousel-item-1"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
-                        <img src="{{asset('images/local-1.jpeg')}}" class="absolute block w-full h-full" alt="...">
+                        <img src="{{asset('images/local-1.jpeg')}}" class="absolute object-cover block w-full h-full"
+                            alt="...">
                     </div>
                     <!-- Item 2 -->
                     <div id="carousel-item-2"
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
                         <img src="{{asset('images/local-2.jpg')}}"
-                            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="absolute object-cover block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
                     <!-- Item 3 -->
@@ -44,7 +43,7 @@
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
                         <img src="{{asset('images/local-3.jpg')}}"
-                            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="absolute object-cover block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
                     <!-- Item 4 -->
@@ -52,7 +51,7 @@
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
                         <img src="{{asset('images/local-4.jpg')}}"
-                            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="absolute object-cover block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
                     <!-- Item 5 -->
@@ -60,7 +59,7 @@
                         class="w-[20rem] h-[20rem] carousel-item absolute sm:w-full sm:h-full transition-opacity duration-500 ease-in-out"
                         data-carousel-item>
                         <img src="{{asset('images/local-5.jpg')}}"
-                            class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="absolute object-cover block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt="...">
                     </div>
                 </div>

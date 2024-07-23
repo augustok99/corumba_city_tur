@@ -17,7 +17,7 @@
             <div class="flex flex-col justify-center items-center md:contents">
                 <div id="animatedElement"
                     class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
-                    <img class="w-full h-full rounded-2xl" src="{{ asset('images/Cristo.jpg') }}" alt="">
+                    <img class="w-full h-full object-cover rounded-2xl" src="{{ asset('images/Cristo.jpg') }}" alt="">
                 </div>
                 <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
                     <div class="h-full w-6 flex items-center justify-center">
@@ -61,7 +61,7 @@
                 <div class="flex flex-row-reverse md:contents">
                     <div id="animatedElement"
                         class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
-                        <img class="w-full h-full rounded-2xl"
+                        <img class="w-full h-full object-cover rounded-2xl"
                             src="{{ asset('images/santuario-nossa-senhora-aux.jpg') }}" alt="">
                     </div>
                 </div>
@@ -109,7 +109,8 @@
                 <div class="flex flex-col justify-center items-center md:contents">
                     <div id="animatedElement"
                         class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
-                        <img class="w-full h-full rounded-2xl" src="{{asset('images/pracinha_cb 1.png')}}" alt="">
+                        <img class="w-full h-full object-cover rounded-2xl" src="{{asset('images/pracinha_cb 1.png')}}"
+                            alt="">
                     </div>
                     <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
                         <div class="h-full w-6 flex items-center justify-center">
@@ -125,7 +126,7 @@
                             1924 - Praça da República.
                         </h3>
                         <p
-                            class="w-[22rem] md:w-[18rem] font-medium leading-tight text-left text-black font-montserrat lg:w-[24rem]">
+                            class="w-[22rem] md:w-[19rem] font-medium leading-tight text-left text-black font-montserrat lg:w-[24rem]">
                             A Praça da República foi cenário da batalha final da retomada de Corumbá em 1867. Localizada
                             Centro da Cidade, em uma área de quase seis mil m², a praça foi construída em 1924.  Foi uma
                             fortificação militar, palco da última batalha, na Guerra da Tríplice Aliança.
@@ -154,7 +155,7 @@
                     <div class="flex flex-col justify-center items-center md:contents">
                         <div id="animatedElement"
                             class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
-                            <img class="w-full h-full rounded-2xl"
+                            <img class="w-full h-full object-cover rounded-2xl"
                                 src="{{asset('images/corumba-candelaria-gisele-ribeiro.jpg')}}"
                                 alt="Foto Catedral Nossa senhora da candelaria">
                         </div>

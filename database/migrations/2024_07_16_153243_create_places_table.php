@@ -14,6 +14,7 @@ class CreatePlacesTable extends Migration
             $table->string('title');
             $table->enum('type', ['Hotel', 'Restaurante', 'Monumento']);
             $table->string('image_path')->nullable();
+            $table->string('description');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

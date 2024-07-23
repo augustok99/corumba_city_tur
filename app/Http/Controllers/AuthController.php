@@ -14,7 +14,7 @@ class AuthController extends Controller
 
         // Validar os dados recebidos do formulário
         $request->validate([
-            'username' => 'required|string|max:255|unique:users',
+            'username' => 'required|string|max:16|unique:users',
             'password' => 'required|string|min:6',
             'profile_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Exemplo de validação para imagem
         ]);
@@ -72,4 +72,56 @@ class AuthController extends Controller
 
         return redirect('/login'); // Redireciona para a página de login após o logout
     }
+
+    public function showEditForm()
+    {
+        // Obtém o usuário autenticado
+        $user = Auth::user();
+
+        // Retorna a visão com o usuário atual
+        return view('layouts.edit_user', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        // Validação dos dados recebidos
+        $request->validate([
+            'username' => 'required|string|max:255|unique:users,username,' . Auth::id(),
+            'password' => 'nullable|string|min:6',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Obtém o usuário autenticado
+        $user = Auth::user();
+
+        // Atualiza o username
+        $user->username = $request->username;
+
+        // Se uma nova senha foi fornecida, atualiza a senha
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
+        // Tratamento do arquivo de imagem
+        if ($request->hasFile('profile_image')) {
+            // Remove a imagem antiga, se existir
+            if ($user->profile_image) {
+                $oldImagePath = public_path('profiles/' . $user->profile_image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            $imageName = time() . '.' . $request->profile_image->getClientOriginalExtension();
+            $request->profile_image->move(public_path('profiles'), $imageName);
+            $user->profile_image = $imageName;
+        }
+
+        // Salva as alterações no usuário
+        $user->save(); // Certifique-se de que o método `save` está disponível
+
+        // Redireciona com uma mensagem de sucesso
+        return redirect()->route('home')->with('success', 'Informações do usuário atualizadas com sucesso!');
+    }
+
 }

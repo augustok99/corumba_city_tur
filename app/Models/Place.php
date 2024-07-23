@@ -9,7 +9,13 @@ class Place extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'title', 'type', 'image_path'];
+    protected $fillable = [
+        'user_id',
+        'title',
+        'type',
+        'image_path',
+        'description', // Adicione esta linha
+    ];
 
     // usei para captar usuario autenticado
     public function user()

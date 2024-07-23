@@ -8,7 +8,8 @@
 
     <div id="animatedElement"
         class="opacity-0 w-[20rem] h-[25rem] max-h-[27rem] max-w-[25rem] lg:h-[27rem] lg:w-[21rem] mt-12 mx-auto lg:mx-0 lg:mr-0 bg-red-200 shadow-2xl rounded-2xl mb-16 sm:mb-10 hover:scale-110 duration-300">
-        <img class="w-[22rem] h-full rounded-lg" src="{{asset('images/carlos-augusto.jpg')}}" alt="foto carlos augusto">
+        <img class="w-[22rem] object-cover h-full rounded-lg" src="{{asset('images/carlos-augusto.jpg')}}"
+            alt="foto carlos augusto">
 
     </div>
     <div

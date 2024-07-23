@@ -145,58 +145,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
+//filtros
 document.addEventListener('DOMContentLoaded', function () {
-  let visibleItems = 4; // Número inicial de itens visíveis
-  const items = document.querySelectorAll('#place-item');
-  const loadMoreButton = document.getElementById('loadMoreButton');
-
-
-  //aplicar filtro na pagina de detalhes
   $(document).ready(function () {
     $('.filter-link').click(function (e) {
       e.preventDefault();
       let filter = $(this).data('filter');
 
-      $('.item').each(function () {
-        if (filter === 'all' || $(this).hasClass(filter)) {
-          $(this).show();
-        } else {
-          $(this).hide();
-        }
-      });
-    });
-  });
-
-  //carregar mais items
-
-  // Função para atualizar a visibilidade dos itens e o estado do botão
-  function updateVisibleItems() {
-    items.forEach((item, index) => {
-      if (index < visibleItems) {
-        item.classList.remove('hidden');
+      if (filter === 'all') {
+        $('.item').show();
       } else {
-        item.classList.add('hidden');
+        $('.item').hide().filter('.' + filter).show();
       }
+
+      $('#search').val('');
     });
 
-    // Exibir ou ocultar o botão de "Carregar Mais" com base na visibilidade dos itens
-    if (visibleItems >= items.length) {
-      loadMoreButton.classList.add('hidden'); // Oculta o botão se não houver mais itens para mostrar
-    } else {
-      loadMoreButton.classList.remove('hidden'); // Mostra o botão se houver mais itens para mostrar
-    }
-  }
-
-  // Atualiza a visibilidade dos itens iniciais ao carregar a página
-  updateVisibleItems();
-
-  // Evento de clique no botão "Carregar Mais"
-  loadMoreButton.addEventListener('click', function () {
-    visibleItems += 4; // Aumenta o número de itens visíveis ao clicar no botão
-    updateVisibleItems(); // Atualiza a visibilidade dos itens
+    $('#clearFilter').click(function () {
+      $('.item').show();
+      $('#search').val('');
+      // Limpa o parâmetro de pesquisa da URL e recarrega a página
+      const url = new URL(window.location);
+      url.search = '';
+      window.location.href = url.toString();
+    });
   });
 });
+
+window.addEventListener("load", function () {
+  document.querySelector('[data-dropdown-toggle="dropdown"]').click();
+});
+
 
 
 
@@ -303,6 +282,3 @@ document.addEventListener('DOMContentLoaded', function () {
     updateVisibleItemsRating(); // Atualiza a visibilidade dos itens
   });
 });
-
-
-

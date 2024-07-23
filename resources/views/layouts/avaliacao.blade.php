@@ -19,7 +19,7 @@
 
         @foreach($ratings as $rating)
         <div id="rating-item" data-rating-id="{{ $rating->id }}"
-            class="flex flex-col mt-16 shadow-2xl break-after-all xl:w-[55rem] w-[22rem] h-full md:w-[46rem] bg-white rounded-2xl mx-auto">
+            class="flex flex-col mt-16 shadow-2xl break-after-all xl:w-[55rem] w-[22rem] sm:w-[23rem] h-full md:w-[46rem] bg-white rounded-2xl mx-auto">
             <div class="flex justify-start items-center">
                 <div class="mt-7 ml-7 w-[2.5rem] h-[2.5rem] rounded-full overflow-hidden">
                     <img src="{{ $rating && $rating->profile_image ? asset('profiles/' . $rating->profile_image) : asset('images/default_profile.jpg') }}"

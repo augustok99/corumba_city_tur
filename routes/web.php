@@ -37,6 +37,17 @@ Route::post('/places', [PlaceController::class, 'store'])->name('places.store')-
 Route::get('/lugares_cadastrados', [PlaceController::class, 'index'])->name('lugares_cadastrados')->middleware('auth');
 Route::get('/places', [PlaceController::class, 'index'])->name('places.index')->middleware('auth');
 Route::get('/detalhes', [PlaceController::class, 'showDetails'])->name('detalhes');
+Route::get('/places/{id}/edit', [PlaceController::class, 'edit'])->name('places.edit');
+Route::put('/places/{id}', [PlaceController::class, 'update'])->name('places.update');
+Route::get('/places/{id}', [PlaceController::class, 'show'])->name('places.show');
+Route::delete('/places/{id}', [PlaceController::class, 'destroy'])->name('places.destroy')->middleware('auth');
+
+
+Route::get('/user/edit', [AuthController::class, 'showEditForm'])->name('users.edit')->middleware('auth');
+Route::post('/user/update', [AuthController::class, 'update'])->name('users.update')->middleware('auth');
+Route::get('/search', [PlaceController::class, 'search'])->name('places.search');
+
+
 
 // Rotas de Avaliacao
 Route::post('/ratings/{id}/like', [RatingController::class, 'toggleLike'])->name('ratings.like')->middleware('auth');

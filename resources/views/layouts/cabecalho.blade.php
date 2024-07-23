@@ -58,30 +58,30 @@
                 </div>
 
                 @if(auth()->check())
-                <div
-                    class="absolute flex sm:hidden md:flex items-center lg:flex inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button type="button">
-                        <img src=" {{ asset('images/notificacoes.png') }}" class="w-7 mr-2" alt="">
-                    </button>
+                    <div
+                        class="absolute flex sm:hidden md:flex items-center lg:flex inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <!-- <button type="button">
+                                            <img src=" {{ asset('images/notificacoes.png') }}" class="w-7 mr-2" alt="">
+                                        </button> -->
 
 
-                    <!-- Profile dropdown -->
-                    <div class="flex item-center relative ml-3 md:flex items-center">
-                        <div>
-                            <button type="button" class="relative flex rounded-full text-sm focus:outline-none"
-                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <span class="absolute -inset-1.5"></span>
-                                <span class="sr-only">Open user menu</span>
-                                <!-- Se o usuário estiver autenticado (auth()->check()) e tiver uma imagem de perfil definida (auth()->user()->profile_image),
-                                                                                                      o caminho para essa imagem é retornado.
-                                                                                                      Caso contrário, se o usuário não estiver autenticado ou não tiver uma imagem de perfil definida, retorna o caminho para uma imagem padrão,default_profile.jpg.
-                                                                                                      -->
-                                <img class="h-8 w-8 rounded-full"
-                                    src="{{ auth()->check() && auth()->user()->profile_image ? asset('profiles/' . auth()->user()->profile_image) : asset('images/default_profile.jpg') }}"
-                                    alt="Foto de perfil do usuário">
-                            </button>
-                        </div>
-                        @endif
+                        <!-- Profile dropdown -->
+                        <div class="flex item-center relative ml-3 md:flex items-center">
+                            <div>
+                                <button type="button" class="relative flex rounded-full text-sm focus:outline-none"
+                                    id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="absolute -inset-1.5"></span>
+                                    <span class="sr-only">Open user menu</span>
+                                    <!-- Se o usuário estiver autenticado (auth()->check()) e tiver uma imagem de perfil definida (auth()->user()->profile_image),
+                                                                                                                                          o caminho para essa imagem é retornado.
+                                                                                                                                          Caso contrário, se o usuário não estiver autenticado ou não tiver uma imagem de perfil definida, retorna o caminho para uma imagem padrão,default_profile.jpg.
+                                                                                                                                          -->
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="{{ auth()->check() && auth()->user()->profile_image ? asset('profiles/' . auth()->user()->profile_image) : asset('images/default_profile.jpg') }}"
+                                        alt="Foto de perfil do usuário">
+                                </button>
+                            </div>
+                @endif
 
 
                         <div class="flex flex-col mt-9">
@@ -90,23 +90,21 @@
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                 tabindex="-1">
                                 <!-- Exibe o nome de usuário ou "Seu Perfil" se estiver autenticado -->
-                                <span class="block font-poppins px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                <a href="{{route('users.edit')}}"
+                                    class="block font-poppins px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1"
-                                    id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</span>
+                                    id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</a>
 
                                 <!-- Verifica se o usuário está autenticado para exibir o formulário de logout -->
                                 @auth
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="font-poppins block px-4 py-2 text-sm text-gray-700"
-                                        role="menuitem" tabindex="-1" id="user-menu-item-2">Sair da conta</button>
-                                </form>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="font-poppins block px-4 py-2 text-sm text-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-2">Sair da conta</button>
+                                    </form>
                                 @endauth
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -116,12 +114,12 @@
         <div class="sm:hidden hidden focus:border-none focus:outline-none" id="mobile-menu">
             <div class="space-y-1 px-2 pb-3 pt-2">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="{{ route('home') }}" id="#home-mobile"
-                    class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Home</a>
-                <a href="{{ route('home') }}" id="#historias-mobile"
-                    class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Historias</a>
-                <a href="{{ route('home') }}" id="#sobre-mobile"
-                    class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Sobre</a>
+                <a href="{{ route('home') }}" id="#home"
+                    class="block nav_link rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Home</a>
+                <a href="{{ route('home') }}" id="#historias"
+                    class="block nav_link rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Historias</a>
+                <a href="{{ route('home') }}" id="#sobre"
+                    class="block nav_link rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Sobre</a>
                 <a href="{{ route('detalhes') }}"
                     class="block rounded-md px-3 py-2 text-black text-base font-medium hover:bg-red-200 hover:text-black">Detalhes</a>
                 <a href="{{ route('ratings.show') }}"
