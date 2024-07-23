@@ -18,14 +18,14 @@
                 <div class="mb-4">
                     <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
                     <input type="text" name="username" id="username"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-rose_strong focus:ring-1 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Username" value="{{ old('username', $user->username) }}" required>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Nova Senha
                         (opcional)</label>
                     <input type="password" name="password" id="password"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-rose_strong focus:ring-1 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Digite uma nova senha (mínimo 6 caracteres)">
                 </div>
                 <div class="mb-12 flex justify-center items-start flex-col">

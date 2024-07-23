@@ -14,14 +14,14 @@
                 <div class="mb-4">
                     <label for="username_register" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
                     <input type="text" name="username" id="username_register"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-rose_strong focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Username" required>
                 </div>
                 <div class="mb-4">
                     <label for="password_register" class="block text-sm font-medium text-gray-700 mb-2">Sua
                         senha</label>
                     <input type="password" name="password" id="password_register"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border border-rose_strong focus:outline-none focus:ring-1 focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Entre com sua senha" required>
                 </div>
                 <div class="mb-12 flex justify-center items-start flex-col">
@@ -55,18 +55,18 @@
         </div>
     </div>
     @if ($errors->any())
-        <div class="flex justify-center">
-            <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
-                role="alert">
-                <strong class="font-bold">Erro!</strong>
-                <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+    <div class="flex justify-center">
+        <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert">
+            <strong class="font-bold">Erro!</strong>
+            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+    </div>
     @endif
 </body>
 

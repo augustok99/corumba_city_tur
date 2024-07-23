@@ -15,13 +15,13 @@
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
                     <input type="text" id="email" name="username"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border focus:ring-1 border-gray-300 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border focus:ring-1 border-rose_strong focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Username" required>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Sua senha</label>
                     <input type="password" id="password" name="password"
-                        class="shadow-sm rounded-md w-full px-3 py-2 border focus:ring-1 border-gray-300 focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
+                        class="shadow-sm rounded-md w-full px-3 py-2 border focus:ring-1 border-rose_strong focus:outline-none focus:ring-rose_strong focus:border-rose_strong"
                         placeholder="Entre com sua senha" required>
                 </div>
                 <div class="flex items-center justify-between mb-4">
