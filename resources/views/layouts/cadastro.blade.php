@@ -52,21 +52,22 @@
                 <button type="submit"
                     class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-rose_strong hover:bg-[#d19090] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Registrar</button>
             </form>
-
-            @if ($errors->any())
-                <div class="bg-red-100 mt-2 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                    <strong class="font-bold">Erro!</strong>
-                    <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
         </div>
     </div>
+    @if ($errors->any())
+    <div class="flex justify-center">
+        <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert">
+            <strong class="font-bold">Erro!</strong>
+            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    @endif
 </body>
 
 </html>

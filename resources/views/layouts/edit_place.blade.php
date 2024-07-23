@@ -74,13 +74,28 @@
                         name="description"></textarea>
                 </div>
 
-                <div class="flex justify-center mt-4 mx-auto">
+                <div class="flex justify-center mt-4 mb-4 mx-auto">
                     <button type="submit"
                         class="text-base text-center hover:scale-105 text-black font-poppins px-3 py-2 bg-red-200font-poppins mt-4 mx-auto bg-rose_medium shadow-lg rounded-xl w-[7rem] h-[3rem] md:w-[8rem] md:h-[3rem] font-medium mb-32 duration-300">Salvar</button>
                 </div>
             </form>
         </div>
     </div>
+
+    @if ($errors->any())
+    <div class="flex justify-center">
+        <div class="bg-red-100 items-center flex justify-center w-[22rem] mt-24 border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert">
+            <strong class="font-bold">Erro!</strong>
+            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    @endif
 
 </body>
 

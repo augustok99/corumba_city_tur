@@ -86,7 +86,7 @@ class AuthController extends Controller
     {
         // Validação dos dados recebidos
         $request->validate([
-            'username' => 'required|string|max:255|unique:users,username,' . Auth::id(),
+            'username' => 'required|string|max:16|unique:users,username,' . Auth::id(),
             'password' => 'nullable|string|min:6',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);

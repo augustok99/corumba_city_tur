@@ -13,7 +13,7 @@
 
     </div>
     <div
-        class="w-[22rem] pl-4 mb-0 lg:pl-0 font-medium leading-tight text-justify text-black font-montserrat mx-auto lg:mx-0 lg:ml-28 sm:mt-12 rounded-2xl sm:w-[28rem] sm:h-[12rem] h-[16rem] sm:mb-11">
+        class="w-[22rem] pl-4 mb-0 lg:pl-0 font-medium leading-tight sm:text-justify text-black font-montserrat mx-auto lg:mx-0 lg:ml-28 sm:mt-12 rounded-2xl sm:w-[28rem] sm:h-[12rem] h-[16rem] sm:mb-11">
         <h1 class="font-montserrat_alter font-medium">Olá, meu nome é Carlos Augusto, sou um aspirante a desenvolvedor,
             apaixonado por tecnologia, estou sempre buscando evoluir em minha trajetória, acompanhando tendências sobre
             o mundo de desenvolvimento de aplicações web e engenharia de dados. Tenho 24 anos, e estou cursando a
