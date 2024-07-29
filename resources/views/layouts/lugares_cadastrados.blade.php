@@ -9,14 +9,14 @@
     @include('layouts.cabecalho')
 </header>
 
-<body class="bg-gradient-to-r from-gray-200 via-rose_light to-gray-50 from-10% via-10% to-80%">
+< class="bg-gradient-to-r from-gray-200 via-rose_light to-gray-50 from-10% via-10% to-80%">
     <div class="mt-32 flex justify-center items-center">
         <h1 class="text-center font-montserrat text-2xl md:text-[1.8rem] font-bold">Adicione seus lugares</h1>
     </div>
 
     <div class="mt-10 flex justify-center">
         <div
-            class="bg-white ring-2 ring-rose_strong w-[22rem] h-[34rem] md:w-[35rem] flex justify-center md:h-[31rem] rounded-lg shadow-lg">
+            class="bg-white ring-2 ring-rose_strong w-[22rem] h-[39rem] md:w-[35rem] flex justify-center md:h-[37rem] rounded-lg shadow-lg">
             <form action="{{ route('places.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-col justify-between pt-4 space-y-12 mt-4">
@@ -28,6 +28,14 @@
                             name="title" placeholder="Digite aqui..." required>
                     </div>
 
+                    <div class="flex justify-start mx-auto items-center ml-[4.2rem]">
+
+                        <span
+                            class="text-center font-montserrat text-base md:text-base font-semibold mx-auto">Link</span>
+                        <input
+                            class="text-base border ring-1 focus:ring-2 ring-rose_strong border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
+                            name="links" placeholder="Cole aqui a url...">
+                    </div>
                     <div class="flex items-center justify-start ml-12">
                         <span class="text-center font-montserrat text-base md:text-base font-semibold">Tipo de
                             local</span>
@@ -82,10 +90,28 @@
         </div>
     </div>
 
+    @if ($errors->any())
+        <div class="flex justify-center mt-28">
+            <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+                role="alert">
+                <strong class="font-bold">Erro!</strong>
+                <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+        </div>
+    @endif
+
+
     <!-- Lugares Cadastrados -->
     @if ($places->count() > 0)
         <!-- Seção de Cadastros -->
-        <div class="item hotel flex justify-center items-center mx-auto mt-32 md:mt-44">
+        <div class="item hotel flex flex-col justify-center items-center mx-auto mt-32 md:mt-44">
             <h1 class="font-montserrat_alter flex font-semibold text-2xl">
                 Locais já cadastrados
             </h1>
@@ -113,8 +139,8 @@
                             </div>
 
                             <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
-                                <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
+                                <span class="flex font-poppins justify-center px-4 text-base text-black font-medium"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
                                 <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
                                     tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
                             </div>
@@ -139,6 +165,6 @@
             @endforeach
         </div>
     @endif
-</body>
+    </body>
 
 </html>

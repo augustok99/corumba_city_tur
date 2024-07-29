@@ -16,7 +16,7 @@
 
     <div class="mt-10 flex justify-center">
         <div
-            class="ring-2 ring-rose_strong bg-white w-[22rem] h-[18rem] md:w-[35rem] flex justify-center md:h-[31rem] rounded-lg shadow-lg">
+            class="ring-2 ring-rose_strong bg-white w-[22rem] h-[33rem] md:w-[35rem] flex justify-center md:h-[37rem] rounded-lg shadow-lg">
 
             <form action="{{ route('places.update', $place->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -26,12 +26,21 @@
                         <h3 class="text-center font-montserrat text-base md:text-base font-semibold mx-auto">*Titulo
                         </h3>
                         <input
-                            class="text-base border ring-2 ring-rose_strong border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
+                            class="text-base border ring-1 ring-rose_strong border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
                             name="title" placeholder="Digite aqui..." value="{{ $place->title }}" required>
                     </div>
 
+                    <div class="flex justify-start mx-auto items-center ml-[4.2rem]">
+
+                        <span
+                            class="text-center font-montserrat text-base md:text-base font-semibold mx-auto">Link</span>
+                        <input
+                            class="text-base border ring-1 focus:ring-2 ring-rose_strong border-gray-300 rounded-lg ml-6 pr-2 w-[12rem] h-[2rem] md:w-[15rem] md:h-[2rem] pl-2 py-5 font-poppins placeholder-gray-500 border-none outline-none placeholder:font-medium placeholder:font-poppins placeholder:pl-2"
+                            name="links" value="{{$place->links}}" placeholder="Cole aqui a url...">
+                    </div>
+
                     <div class="flex items-center justify-start ml-12">
-                        <h3 class="text-center font-montserrat text-base md:text-base font-semibold">*Tipo de local</h3>
+                        <h3 class="text-center font-montserrat text-base md:text-base font-semibold">Tipo de local</h3>
                         <div id="dropdown" class="w-40">
                             <select
                                 class="text-black font-poppins h-full cursor-pointer hover:bg-rose_light ml-6 focus:ring-0 bg-rose_medium ring-0 outline-none border-none font-medium rounded-lg text-sm px-1 py-2.5 text-center items-center"
@@ -49,7 +58,8 @@
                         <h3 class="text-center font-montserrat text-base pr-3 md:text-base font-semibold">Adicione uma
                             imagem
                         </h3>
-                        <input id="imageInput" class="custom-file-input" type="file" name="image" accept="image/*">
+                        <input id="imageInput" value="{{$place->image_path}}" class="custom-file-input" type="file"
+                            name="image" accept="image/*">
                     </div>
                 </div>
 
@@ -70,8 +80,8 @@
                     <span class="text-left font-montserrat md:text-base font-semibold mb-3">Descrição do
                         Local</span>
                     <textarea
-                        class="pl-3 pt-2 text-sm border resize-none ring-2 mb-12 ring-rose_strong border-gray-300 rounded-lg w-[12rem] h-[2rem] md:w-[25rem] md:h-[7rem] font-poppins placeholder-gray-500 border-none outline-none"
-                        name="description"></textarea>
+                        class="pl-3 pt-2 text-sm border resize-none ring-2 mb-12 ring-rose_strong border-gray-300 rounded-lg w-[12rem] h-[4rem] md:w-[25rem] md:h-[7rem] font-poppins placeholder-gray-500 border-none outline-none"
+                        name="description">{{$place->description}}</textarea>
                 </div>
 
                 <div class="flex justify-center mt-4 mb-4 mx-auto">

@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-12 flex justify-center items-start flex-col">
                     <label for="profile_image" class="block text-sm font-medium text-gray-700 mb-2">Imagem
-                        Perfil</label>
+                        Perfil (opcional)</label>
                     <input name="profile_image" id="imageInput" class="custom-file-input ml-20" type="file"
                         accept="image/*">
 
@@ -55,18 +55,18 @@
         </div>
     </div>
     @if ($errors->any())
-    <div class="flex justify-center">
-        <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
-            role="alert">
-            <strong class="font-bold">Erro!</strong>
-            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="flex justify-center">
+            <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+                role="alert">
+                <strong class="font-bold">Erro!</strong>
+                <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
-    </div>
     @endif
 </body>
 

@@ -14,7 +14,8 @@ class Place extends Model
         'title',
         'type',
         'image_path',
-        'description', // Adicione esta linha
+        'description',
+        'links',
     ];
 
     // usei para captar usuario autenticado

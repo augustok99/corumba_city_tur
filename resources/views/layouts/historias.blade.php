@@ -147,17 +147,13 @@
                                 class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
                                 Google Maps</a>
                         </div>
-
-
-
                     </div>
                     <!-- left -->
                     <div class="flex flex-col justify-center items-center md:contents">
                         <div id="animatedElement"
                             class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
                             <img class="w-full h-full object-cover rounded-2xl"
-                                src="{{asset('images/corumba-candelaria-gisele-ribeiro.jpg')}}"
-                                alt="Foto Catedral Nossa senhora da candelaria">
+                                src="{{asset('images/casa_vasquez_filhos.jpg')}}" alt="Foto Casa Vasquez & Filhos">
                         </div>
                         <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
                             <div class="h-full w-6 flex items-center justify-center">
@@ -170,14 +166,16 @@
                         <div
                             class="col-start-6 mx-auto flex flex-col justify-start xl:ml-0 col-end-10 p-4 rounded-xl my-4 mt-6 xl:mx-0">
                             <h3 class="font-bold lg:text-lg mb-1 text-black font-montserrat">
-                                1887 - Catedral Nossa Sra da Candelária.
+                                1909 - Casa Vasquez & filhos.
                             </h3>
                             <p
                                 class="w-[22rem] md:w-[18rem] font-medium leading-tight text-left text-black font-montserrat lg:w-[24rem]">
-                                Foi construída em 1885 pelo pregador imperial e Vigário da Vara, Frei Mariano de
-                                Bagnaia. A igreja, segundo os historiadores, foi motivo de muita polêmica na época,
-                                porque o Frei, julgando-se herói da Guerra do Paraguai, ao sobreviver às torturas
-                                impostas pelos paraguaios, decidiu construí-la para se auto-homenagear.
+                                A Casa Vasquez & Filhos, construída no final do século XIX, é um exemplo notável da
+                                arquitetura neoclássica em Corumbá. Este edifício histórico serviu inicialmente como
+                                armazém e estabelecimento comercial, sendo um importante ponto de encontro social e
+                                comercial na cidade. A preservação deste patrimônio é vital para a compreensão da
+                                história econômica de Corumbá, destacando seu papel como um centro comercial
+                                significativo durante o auge da navegação fluvial no Rio Paraguai.
                             </p>
 
                             <div class="flex items-center space-x-2">
@@ -185,19 +183,116 @@
                                 <a href="https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&id=449602"
                                     target="_blank"
                                     class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
-                                    biblioteca.ibge.gov</a>
+                                    pantanalescapes.com</a>
                             </div>
 
                             <div class="flex items-center space-x-2">
                                 <span class="text-sm mt-2 font-bold text-left text-black font-montserrat">Imagem
                                     por:</span>
-                                <a href="https://www.fundacaodecultura.ms.gov.br/com-tombamento-definitivo-catedral-nossa-senhora-da-candelaria-recebe-recursos-do-governo-do-estado/"
+                                <a href="https://pt.m.wikipedia.org/wiki/Ficheiro:Casa_Vasquez_%26_Filhos,_Porto_Geral,_Corumb%C3%A1_MS.jpg"
                                     target="_blank"
                                     class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
-                                    Diario Online</a>
+                                    Wikipedia Ficheiro</a>
                             </div>
                         </div>
+                        <!-- left -->
+                        <div class="flex flex-col justify-center items-center md:contents">
+                            <div id="animatedElement"
+                                class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
+                                <img class="w-full h-full object-cover rounded-2xl"
+                                    src="{{asset('images/corumba-candelaria-gisele-ribeiro.jpg')}}"
+                                    alt="Foto Catedral Nossa senhora da candelaria">
+                            </div>
+                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="hidden lg:flex h-full w-1 bg-black pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="hidden lg:flex w-5 h-5 absolute top-1/2 -mt-3 items-center ml-[0.15rem] rounded-full bg-black shadow">
+                                </div>
+                            </div>
+                            <div
+                                class="col-start-6 mx-auto flex flex-col justify-start xl:ml-0 col-end-10 p-4 rounded-xl my-4 mt-6 xl:mx-0">
+                                <h3 class="font-bold lg:text-lg mb-1 text-black font-montserrat">
+                                    1887 - Catedral Nossa Sra da Candelária.
+                                </h3>
+                                <p
+                                    class="w-[22rem] md:w-[18rem] font-medium leading-tight text-left text-black font-montserrat lg:w-[24rem]">
+                                    Foi construída em 1885 pelo pregador imperial e Vigário da Vara, Frei Mariano de
+                                    Bagnaia. A igreja, segundo os historiadores, foi motivo de muita polêmica na época,
+                                    porque o Frei, julgando-se herói da Guerra do Paraguai, ao sobreviver às torturas
+                                    impostas pelos paraguaios, decidiu construí-la para se auto-homenagear.
+                                </p>
 
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm mt-2 font-bold text-left text-black font-montserrat">
+                                        Fonte:</spa>
+                                        <a href="https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&id=449602"
+                                            target="_blank"
+                                            class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
+                                            biblioteca.ibge.gov</a>
+                                </div>
+
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm mt-2 font-bold text-left text-black font-montserrat">Imagem
+                                        por:</span>
+                                    <a href="https://www.fundacaodecultura.ms.gov.br/com-tombamento-definitivo-catedral-nossa-senhora-da-candelaria-recebe-recursos-do-governo-do-estado/"
+                                        target="_blank"
+                                        class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
+                                        Diario Online</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- left -->
+                        <div class="flex flex-col justify-center items-center md:contents">
+                            <div id="animatedElement"
+                                class="bg-rose_medium opacity-0 col-start-1 flex justify-center col-end-5 rounded-2xl my-4 lg:mb-12 mx-auto lg:mr-0 w-[20rem] h-[20rem] max-h-[20rem] max-w-[25rem] lg:h-[20rem] lg:w-[26rem] lg:ml-auto shadow-md hover:scale-110 duration-300">
+                                <img class="w-full h-full object-cover rounded-2xl"
+                                    src="{{asset('images/forte-junqueira.jpg')}}" alt="Foto forte junqueira">
+                            </div>
+                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                                <div class="h-full w-6 flex items-center justify-center">
+                                    <div class="hidden lg:flex h-full w-1 bg-black pointer-events-none"></div>
+                                </div>
+                                <div
+                                    class="hidden lg:flex w-5 h-5 absolute top-1/2 -mt-3 items-center ml-[0.15rem] rounded-full bg-black shadow">
+                                </div>
+                            </div>
+                            <div
+                                class="col-start-6 mx-auto flex flex-col justify-start xl:ml-0 col-end-10 p-4 rounded-xl my-4 mt-6 xl:mx-0">
+                                <h3 class="font-bold lg:text-lg mb-1 text-black font-montserrat">
+                                    1871 - Forte Junqueira
+                                </h3>
+                                <p class="w-[22rem] md:w-[18rem] font-medium leading-tight text-left text-black 
+                             font-montserrat lg:w-[24rem]">
+                                    Foi construído logo após a Guerra do Paraguai (1871) em uma área privilegiada, de
+                                    onde se avista o Rio Paraguai e paisagem pantaneira. Os 12 canhões de 75 mm
+                                    pertencentes ao forte foram fabricados pela indústria inglesa Fried Krupp, por volta
+                                    de 1872, e nunca foram usados. As paredes do forte são de calcário e têm três
+                                    metros de espessura. Está situado dentro do 17º Batalhão de Caçadores. O nome
+                                    homenageia o Ministro da Guerra na época, José de Oliveira Junqueira, falecido em
+                                    1887. A visitação pode ser realizada com autorização.
+                                </p>
+
+                                <div class="flex items-center space-x-2">
+                                    <span
+                                        class="text-sm mt-2 font-bold text-left text-black font-montserrat">Fonte:</span>
+                                    <a href="https://www.ipatrimonio.org/corumba-forte-junqueira/#!/map=38329&loc=-18.996150831689878,-57.62251853942871,15"
+                                        target="_blank"
+                                        class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
+                                        Prefeitura Corumbá</a>
+                                </div>
+
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm mt-2 font-bold text-left text-black font-montserrat">Imagem
+                                        por:</span>
+                                    <a href="https://www.ipatrimonio.org/corumba-forte-junqueira/#!/map=38329&loc=-18.996150831689878,-57.62251853942871,15"
+                                        target="_blank"
+                                        class="text-sm mt-2 font-bold text-left underline hover:scale-105 text-indigo-600  font-montserrat">
+                                        Camara Municipal</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,8 @@ class PlaceController extends Controller
             'title' => 'required|string|max:21',
             'type' => 'required|in:Hotel,Restaurante,Monumento',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:512',
+            'links' => 'nullable|string|max:255',
         ]);
 
         $imageName = null;
@@ -39,6 +40,7 @@ class PlaceController extends Controller
             'type' => $request->type,
             'image_path' => $imageName,
             'description' => $request->description,
+            'links' => $request->links
         ]);
 
         return redirect()->route('places.index')->with('success', 'Lugar cadastrado com sucesso!');
@@ -79,7 +81,8 @@ class PlaceController extends Controller
             'title' => 'required|string|max:21',
             'type' => 'required|in:Hotel,Restaurante,Monumento',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:512',
+            'links' => 'nullable|string|max:255',
         ]);
 
         $place = Place::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
@@ -93,11 +96,13 @@ class PlaceController extends Controller
         $place->update([
             'title' => $request->title,
             'type' => $request->type,
-            'description' => $request->description, // Atualiza a descrição
+            'description' => $request->description,
+            'links' => $request->links
         ]);
 
         return redirect()->route('places.index')->with('success', 'Lugar atualizado com sucesso!');
     }
+
 
     public function destroy($id)
     {

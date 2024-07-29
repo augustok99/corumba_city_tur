@@ -39,7 +39,7 @@ class AuthController extends Controller
         // Salvar usuário no banco de dados
         if ($user->save()) {
             // Sucesso ao salvar
-            return redirect()->route('home')->with('success', 'Usuário registrado com sucesso!');
+            return redirect()->route('login')->with('success', 'Usuário registrado com sucesso!');
         } else {
             // Tratamento de erro ao salvar
             return back()->withInput()->withErrors('Erro ao salvar usuário.');
