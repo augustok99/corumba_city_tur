@@ -91,79 +91,79 @@
     </div>
 
     @if ($errors->any())
-        <div class="flex justify-center mt-28">
-            <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
-                role="alert">
-                <strong class="font-bold">Erro!</strong>
-                <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+    <div class="flex justify-center mt-28">
+        <div class="bg-red-100 items-center flex justify-center w-[22rem] border flex-col border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert">
+            <strong class="font-bold">Erro!</strong>
+            <span class="block sm:inline">Por favor, corrija os seguintes erros:</span>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+    </div>
 
-        </div>
+    </div>
     @endif
 
 
     <!-- Lugares Cadastrados -->
     @if ($places->count() > 0)
-        <!-- Seção de Cadastros -->
-        <div class="item hotel flex flex-col justify-center items-center mx-auto mt-32 md:mt-44">
-            <h1 class="font-montserrat_alter flex font-semibold text-2xl">
-                Locais já cadastrados
-            </h1>
-        </div>
-        <hr
-            class="item hotel 2xl:ml-28 mt-1 md:mr-[12rem] mx-auto md:w-11/12 w-10/12 xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
+    <!-- Seção de Cadastros -->
+    <div class="item hotel flex flex-col justify-center items-center mx-auto mt-32 md:mt-44">
+        <h1 class="font-montserrat_alter flex font-semibold text-2xl">
+            Locais já cadastrados
+        </h1>
+    </div>
+    <hr
+        class="item hotel 2xl:ml-28 mt-1 md:mr-[12rem] mx-auto md:w-11/12 w-10/12 xl:w-auto xl:ml-12 md:ml-12 h-0.5 border-t-0 bg-black" />
 
-        <div
-            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid lg:grid-cols-2 2xl:grid-cols-4 lg:px-28 justify-center mx-auto pl-20 sm:pl-44 md:pl-20 mt-10">
-            @foreach ($places as $place)
-                <div class="relative shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300">
-                    <a href="{{ route('places.show', $place->id) }}" id="place-item"
-                        class=" item {{ strtolower($place->type) }}">
-                        <img class="w-full h-full object-cover max-w-[18rem] max-h-[22rem] rounded-lg absolute left-0 z-0"
-                            src="{{ asset('places_path/' . ($place->image_path ?? 'img_break.png')) }}" alt="Imagem do local">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid lg:grid-cols-2 2xl:grid-cols-4 lg:px-28 justify-center mx-auto pl-20 sm:pl-44 md:pl-20 mt-10">
+        @foreach ($places as $place)
+        <div class="relative shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300">
+            <a href="{{ route('places.show', $place->id) }}" id="place-item"
+                class=" item {{ strtolower($place->type) }}">
+                <img class="w-full h-full object-cover max-w-[18rem] max-h-[22rem] rounded-lg absolute left-0 z-0"
+                    src="{{ asset('places_path/' . ($place->image_path ?? 'img_break.png')) }}" alt="Imagem do local">
 
-                        <div class="absolute w-full inset-0 items-start flex flex-col justify-between p-5 rounded-2xl">
-                            <div class="flex justify-start rounded-xl mr-12 px-2 bg-white items-center mt-2">
-                                <img class="h-8 w-8 rounded-full"
-                                    src="{{auth()->check() && auth()->user()->profile_image ? asset('profiles/' . auth()->user()->profile_image) : asset('images/default_profile.jpg') }}"
-                                    alt="Foto de perfil do usuário">
-                                <span class="block font-poppins py-2 text-base text-black font-medium ml-2" role="menuitem"
-                                    tabindex="-1"
-                                    id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</span>
-                            </div>
+                <div class="absolute w-full inset-0 items-start flex flex-col justify-between p-5 rounded-2xl">
+                    <div class="flex justify-start rounded-xl mr-12 px-2 bg-white items-center mt-2">
+                        <img class="h-8 w-8 rounded-full"
+                            src="{{auth()->check() && auth()->user()->profile_image ? asset('profiles/' . auth()->user()->profile_image) : asset('images/default_profile.png') }}"
+                            alt="Foto de perfil do usuário">
+                        <span class="block font-poppins py-2 text-base text-black font-medium ml-2" role="menuitem"
+                            tabindex="-1"
+                            id="user-menu-item-0">{{ auth()->check() ? auth()->user()->username : 'Seu Perfil' }}</span>
+                    </div>
 
-                            <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
-                                <span class="flex font-poppins justify-center px-4 text-base text-black font-medium"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
-                                <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute w-10 mt-8 ml-[14.4rem]">
-                            <a class="" href="{{ route('places.edit', $place->id) }}">
-                                <img class="" src="{{asset('images/pencil.png')}}" alt="icone de alteracao">
-                            </a>
-                            <form action="{{ route('places.destroy', $place->id) }}" method="POST" class="mt-4">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este lugar?')">
-                                    <img src="{{asset('images/delete.png')}}" alt="icone de deletar">
-                                </button>
-                            </form>
-                        </div>
-                    </a>
+                    <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
+                        <span class="flex font-poppins justify-center px-4 text-base text-black font-medium"
+                            role="menuitem" tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
+                        <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
+                    </div>
                 </div>
 
-
-            @endforeach
+                <div class="absolute w-10 mt-8 ml-[14.4rem]">
+                    <a class="" href="{{ route('places.edit', $place->id) }}">
+                        <img class="" src="{{asset('images/pencil.png')}}" alt="icone de alteracao">
+                    </a>
+                    <form action="{{ route('places.destroy', $place->id) }}" method="POST" class="mt-4">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este lugar?')">
+                            <img src="{{asset('images/delete.png')}}" alt="icone de deletar">
+                        </button>
+                    </form>
+                </div>
+            </a>
         </div>
+
+
+        @endforeach
+    </div>
     @endif
     </body>
 

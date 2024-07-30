@@ -116,27 +116,28 @@
     <div
         class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid lg:grid-cols-2 2xl:grid-cols-4 lg:px-28 justify-center sm:ml-12 md:ml-12 ml-12 mt-10">
         @foreach ($places as $place)
-            <a href="{{ route('places.show', $place->id) }}" class="mx-auto p-4 item {{ strtolower($place->type) }}">
-                <div class="relative bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300"
-                    id="place-item">
-                    <img class="w-full h-full object-cover max-w-[18rem] max-h-[22rem] rounded-lg absolute left-0 z-0"
-                        src="{{ asset('places_path/' . ($place->image_path ?? 'img_break.png')) }}" alt="Imagem do local">
-                    <div class="absolute w-full inset-0 items-start flex flex-col justify-between p-5 rounded-2xl">
-                        <div class="flex justify-start rounded-xl mr-12 px-2 bg-white items-center mt-2">
-                            <img class="h-8 w-8 rounded-full" src="{{ asset('profiles/' . $place->profile_image) }}"
-                                alt="Foto de perfil do usuário">
-                            <span class="block font-poppins py-2 text-base text-black font-medium ml-2" role="menuitem"
-                                tabindex="-1" id="user-menu-item-0">{{ $place->username }}</span>
-                        </div>
-                        <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
-                            <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
-                                tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
-                            <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
-                                tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
-                        </div>
+        <a href="{{ route('places.show', $place->id) }}" class="mx-auto p-4 item {{ strtolower($place->type) }}">
+            <div class="relative bg-rose_medium shadow-2xl rounded-2xl w-[18rem] h-[22rem] mb-16 hover:scale-110 duration-300"
+                id="place-item">
+                <img class="w-full h-full object-cover max-w-[18rem] max-h-[22rem] rounded-lg absolute left-0 z-0"
+                    src="{{ asset('places_path/' . ($place->image_path ?? 'img_break.png')) }}" alt="Imagem do local">
+                <div class="absolute w-full inset-0 items-start flex flex-col justify-between p-5 rounded-2xl">
+                    <div class="flex justify-start rounded-xl mr-12 px-2 bg-white items-center mt-2">
+                        <img class="h-8 w-8 rounded-full"
+                            src="{{$place->profile_image ? asset('profiles/' . $place->profile_image) :  asset('images/default_profile.png') }}"
+                            alt="Foto de perfil do usuário">
+                        <span class="block font-poppins py-2 text-base text-black font-medium ml-2" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{ $place->username }}</span>
+                    </div>
+                    <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
+                        <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
+                        <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
+                            tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
                     </div>
                 </div>
-            </a>
+            </div>
+        </a>
         @endforeach
     </div>
 </body>
