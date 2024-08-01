@@ -37,7 +37,12 @@
         <h1 class="font-montserrat_alter font-medium">Olá meu nome é Valéria Marcelina. 57
             anos Casada 3 filhos. Cursando o 4⁰ semestre de Análise e Desenvolvimento de Sistemas no Instituto Federal
             de Mato Grosso do Sul Campus
-            Corumbá.</h1>
+            Corumbá. Voltei a estudar aos 35 anos, fiz o fundamental e ensino médio pelo EJA, participei pela primeira
+            vez do ENEM, em 2005, alcancei uma pontuação de 890, em 2013 por segunda vez alcancei 670, fiz 6 semestres
+            de história na UNIFESP, tive que trancar e depois abandonar para poder me mudar para Corumbá MS, e por fim
+            fiz o ENEM por última vez em 2020 e com a pontuação consegui entrar no IFMS para cursar Análise e
+            Desenvolvimento de Sistema. Fiz 1 semestre em 2021 e tive que trancar por motivos de trabalho, retornando em
+            2023 e já vamos para o 5⁰ semestre nos próximos meses.</h1>
     </div>
 
 </div>
