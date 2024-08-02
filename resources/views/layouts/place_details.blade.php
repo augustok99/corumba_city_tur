@@ -31,28 +31,29 @@
         </div>
 
         @if($place->links)
-            <ul class="mt-2 flex justify-center items-center flex-col">
-                <span class="text-lg font-semibold font-poppins">Para ver mais informações acesse:</span>
-                <a href="{{ $place->links}}" target="_blank"
-                    class="text-lg px-5 text-indigo-600 font-poppins mt-1">{{$place->links ?? 'Link não disponível' }}</a>
-            </ul>
+        <ul class="mt-2 flex justify-center items-center flex-col">
+            <span class="text-lg font-semibold font-poppins">Para ver mais informações acesse:</span>
+            <a href="{{ $place->links}}" target="_blank"
+                class="text-lg px-5 text-indigo-600 font-poppins mt-1">{{$place->links ?? 'Link não disponível' }}</a>
+        </ul>
         @endif
 
         <div class="flex flex-col justify-center items-center">
             <span class="text-lg font-semibold mt-2 font-poppins">Descrição do Local:</span>
-            <p class="text-lg px-5 font-poppins mt-2">{{ $place->description ?? 'Descrição não disponível' }}</p>
+            <p class="text-lg px-12 xl:px-96 font-poppins mt-2">{{ $place->description ?? 'Descrição não disponível' }}
+            </p>
         </div>
     </div>
 
     <div class="mb-20 space-x-16 mt-3 flex justify-center">
         @if($place->id > $minId)
-            <a href="{{ route('places.show', $place->id - 1) }}"
-                class="text-base mt-6 text-center hover:scale-105 text-black shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] bg-rose_medium">Voltar</a>
+        <a href="{{ route('places.show', $place->id - 1) }}"
+            class="text-base mt-6 text-center hover:scale-105 text-black shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] bg-rose_medium">Voltar</a>
         @endif
         @if($place->id < $maxId) <a href="{{ route('places.show', $place->id + 1) }}"
             class="text-base mt-6 text-center hover:scale-105 text-black shadow-lg font-poppins font-medium rounded-lg px-3 py-2 w-[7rem] bg-rose_medium">
             Próximo</a>
-        @endif
+            @endif
 </body>
 
 </html>

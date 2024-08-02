@@ -124,14 +124,14 @@
                 <div class="absolute w-full inset-0 items-start flex flex-col justify-between p-5 rounded-2xl">
                     <div class="flex justify-start rounded-xl mr-12 px-2 bg-white items-center mt-2">
                         <img class="h-8 w-8 rounded-full"
-                            src="{{$place->profile_image ? asset('profiles/' . $place->profile_image) :  asset('images/default_profile.png') }}"
+                            src="{{$place->profile_image ? asset('profiles/' . $place->profile_image) : asset('images/default_profile.png') }}"
                             alt="Foto de perfil do usuário">
                         <span class="block font-poppins py-2 text-base text-black font-medium ml-2" role="menuitem"
                             tabindex="-1" id="user-menu-item-0">{{ $place->username }}</span>
                     </div>
-                    <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center mt-4">
+                    <div class="flex flex-col mx-auto space-y-1 bg-white rounded-lg justify-center items-center mt-4">
                         <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
-                            tabindex="-1" id="user-menu-item-0">{{ $place->type }}</span>
+                            tabindex="-1" id="user-menu-item-0">{{ "Local: " . $place->type }}</span>
                         <span class="block font-poppins px-4 text-base text-black font-medium" role="menuitem"
                             tabindex="-1" id="user-menu-item-0">{{$place->title }}</span>
                     </div>
